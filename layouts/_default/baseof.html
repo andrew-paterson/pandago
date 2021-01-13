@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    {{ partial "pandago/head-element-markup.html" . }}
+    {{ partial "custom-head-markup.html" }}
+  </head>
+  <body class="{{ .Params.pageclass }} header-height-tall">
+    <div id="wrapper">
+      <div class='panels'>
+        {{ partial "pandago/header.html" . }}
+        {{ block "main" . }}{{ end }}
+      </div>
+        {{ partial "pandago/footer.html" . }}
+    </div>
+    {{ partial "hugo-sundries/script-bundle.html" (dict "context" . "output_path" "js/theme.js" "source_files" (slice "js/general.js|babel" "js/mobile-nav-toggler.js|babel" "js/scroll-detection.js|babel")) }}
+  </body>
+</html>

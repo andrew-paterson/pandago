@@ -1,0 +1,29 @@
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+}
+
+@function box-shadow($shadowNames, $opacity: 0.16) {
+  $map: (
+    top: 0 -3px 6px rgba(0,0,0,$opacity),
+    bottom: 0 3px 6px rgba(0,0,0,$opacity),
+		left: -4px 0 6px 0 rgba(0,0,0,$opacity),
+		right: 6px 0 4px 0 rgba(0,0,0,$opacity),
+		topInset: inset 0px 3px 5px rgba(0,0,0,$opacity),
+		leftInset: inset 10px 0px 6px -6px rgba(0,0,0,$opacity),
+		rightInset: inset -10px 0px 6px -6px rgba(0,0,0,$opacity),
+		bottomRight: 3px 3px 6px rgba(0,0,0,$opacity)
+  );
+  $shadowValues: ();
+  @each $shadowName in $shadowNames {
+    $shadowValue: map-get($map, $shadowName);
+    @if $shadowValue { 
+      $shadowValues: append($shadowValues, $shadowValue, comma);
+    };
+  }
+  @return $shadowValues;
+}

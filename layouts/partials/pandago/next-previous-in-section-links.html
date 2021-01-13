@@ -1,0 +1,4 @@
+<div class="prev-next-links">
+  {{ if .PrevInSection }}<a class="prev" href="{{ .PrevInSection.RelPermalink }}"><< {{ .PrevInSection.Title }}</a> {{ end }}
+  {{ if .NextInSection }}<a class="next" href="{{ .NextInSection.RelPermalink }}">{{ .NextInSection.Title }} >></a>{{ end }}
+</div>

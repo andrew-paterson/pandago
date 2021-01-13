@@ -1,0 +1,26 @@
+{{ $page_title := ""}}
+{{if (or (eq .Site.Title .Title) (.IsHome)) }}
+  {{ $page_title = .Site.Title}}
+{{ else }}
+  {{ $page_title = (print .Title " | " .Site.Title )}}
+{{ end }}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="{{ .Params.meta_description }}">
+<meta property="og:image" content="{{ .Site.BaseURL }}{{ .Site.Params.default_og_image}}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:description" content="{{ .Params.meta_description }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ $page_title }}">
+<title>{{$page_title}}</title>
+<link href="/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+{{ $sass := resources.Get "scss/style.scss" }}
+{{ $options := (dict "outputStyle" "compressed" "enableSourceMap" true) }}
+{{ $style := $sass | resources.ToCSS $options }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" type="text/css" media="screen, projection" />
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->

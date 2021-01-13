@@ -1,0 +1,10 @@
+{{ if .Params.categories }}
+  <div class="categories">
+    <ul>
+      <li class="list-header">Categories</li>
+      {{ range .Params.categories }}
+      <li><a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
+      {{ end }}
+    </ul>
+  </div>
+{{ end }}

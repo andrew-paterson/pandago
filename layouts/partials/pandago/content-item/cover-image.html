@@ -1,0 +1,7 @@
+{{ if .Params.cover_image }}
+  {{ if fileExists ( print "static" .Params.cover_image) }}
+    <a href="{{ .RelPermalink }}" class="thumbnail-link">
+      <img class="item-thumbnail" src="{{ .Params.cover_image }}" />
+    </a>
+  {{ end }}
+{{ end }}

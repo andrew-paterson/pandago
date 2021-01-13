@@ -1,0 +1,9 @@
+<div class="content-list-item">
+  <h2 class="item-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+  {{ partial "pandago/content-item/cover-image.html" . }}
+  {{ partial "pandago/content-item/publish-date.html" . }}
+  {{ partial "pandago/content-item/categories.html" . }}
+  {{ partial "pandago/content-item/tags.html" . }}
+  {{ partial "pandago/content-item/summary.html" . }}
+  <a  class="read-more" href="{{ .RelPermalink }}">Read more</a>
+</div>

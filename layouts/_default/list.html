@@ -1,0 +1,37 @@
+{{ define "main" }}
+{{ partial "pandago/content-item/page-banner.html" . }}
+<section id="main-content" class="blog-layout">
+  <div class="container page-gutters padding-y-xl">
+    {{if .Title}}<h1 class="main-header">{{ .Title }}</h1>{{end}}
+    <div class="d-flex justify-center margin-bottom-lg">
+      <div class="body-text list-page-intro">
+        {{ .Content }}
+      </div>
+    </div>
+    <div class="section-content page-gutters">
+      <div class="main-block body-text">
+        {{ $page_size := 20 }}
+        {{ if .Params.page_size }}
+          {{ $page_size = .Params.page_size }}
+        {{ end }}
+        {{ range (.Paginator $page_size).Pages }}
+          {{ .Render "list_item" }}
+        {{ end }}
+        <div class="pagination-links">
+          {{ template "_internal/pagination.html" . }}
+        </div>
+      </div>
+      {{ if .Params.sidebar_partials }}
+        <div class=" sidebar-outer hide-below-979px">
+          <div class="sidebar body-text">
+            {{ $page_context := . }}
+            {{ range .Params.sidebar_partials }}
+              {{ partial . $page_context}}
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
