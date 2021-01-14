@@ -69,21 +69,21 @@ section {
 	padding-right: $pc-page-gutter-left-right;
 }
 
-
-
 header {
 	width: 100%;
 	box-shadow: $desktop-header-box-shadow;
-	background-color: $desktop-header-background-color;
+  background-color: $desktop-header-background-color;
+  display: flex;
+  justify-content: center;
 	.container {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		flex-wrap: wrap;
-		max-width: $desktop-header-container-max-width;
+    max-width: $desktop-header-container-max-width;
+    width: 100%;
 	}
 }
-
 
 @media (max-width: 979px) {
 	.desktop-nav {
