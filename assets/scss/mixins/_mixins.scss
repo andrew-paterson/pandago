@@ -1,6 +1,6 @@
 // @include box-shadow((leftInset, topInset, bottom));
 @mixin box-shadow($shadowNames, $opacity: 0.16) {
-  box-shadow: box-shadow-value($shadowNames, $opacity)
+  box-shadow: box-shadow($shadowNames, $opacity)
 }
 @mixin linear-gradient($angle: 0deg, $list: ($primary,$secondary)) {
   background: first($list);

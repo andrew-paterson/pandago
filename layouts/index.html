@@ -1,14 +1,6 @@
 {{ define "main" }}
-{{ if isset .Params "pano_page_banner" }}
-  <section id="panorama">
-    <picture>
-      {{ partial "hugo-sundries/responsive-source-element.html" (dict "context" . "image_path" .Params.pano_page_banner "media" "(min-width: 600px)" "element" "source")}}
-      {{ partial "hugo-sundries/responsive-source-element.html" (dict "context" . "image_path" .Params.standard_page_banner "media" "(max-width: 599px)" "element" "source")}}
-      <img src="{{ .Params.pano_page_banner }}">
-    </picture>
-  </section>
-{{end}}
-<section id="home" class="panel">
+{{ partial "pandago/content-item/page-banner.html" . }}
+<section id="main-content" class="panel">
   <div class="container page-gutters">
     <div class="text">
       {{ if .Title }}<h2 class="main-header main-header-xl">{{ .Title }}</h2>{{ end }}

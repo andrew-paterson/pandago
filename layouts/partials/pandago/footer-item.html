@@ -1,0 +1,19 @@
+<div class="footer-item {{ .class }}">
+  {{ $url_prefix := ""}}
+  {{ if (eq .type "email")}}
+    {{ $url_prefix = "mailto:"}}
+  {{ else if (eq .type "phone") }}
+    {{ $url_prefix = "tel:"}}
+  {{ end }}
+  {{ $url := "" }}
+  {{ if .url }}
+    {{ $url = (print $url_prefix .url) }}
+  {{ else if (or (eq .type "email") (eq .type "phone"))}}
+    {{ $url = (print $url_prefix .text) }}
+  {{ end }}
+  {{ if $url }}
+    <a href="{{ $url | safeURL }}">{{ .text }}</a>
+  {{ else }}
+    {{ .text }}
+  {{ end }}
+</div>

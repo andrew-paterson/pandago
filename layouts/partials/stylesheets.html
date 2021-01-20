@@ -1,0 +1,4 @@
+{{ $sass := resources.Get "scss/style.scss" }}
+{{ $options := (dict "outputStyle" "compressed" "enableSourceMap" true) }}
+{{ $style := $sass | resources.ToCSS $options }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" type="text/css" media="screen, projection" />

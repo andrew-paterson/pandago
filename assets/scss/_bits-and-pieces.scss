@@ -46,12 +46,6 @@ a {
     color: inherit;
     text-decoration: inherit;
     font-weight: inherit;
-    &:after {
-      content: $external-link-icon;
-      width: 16px;
-      display: inline-block;
-      margin-left: 8px;
-    }
   }
 }
 
@@ -68,7 +62,12 @@ a:active {
 	text-decoration: $link-text-decoration;
 }
 
-
+a.external-icon:after {
+  content: $external-link-icon;
+  width: 16px;
+  display: inline-block;
+  margin-left: 8px;
+}
 
 .main-header {
 	color: $main-header-color;
@@ -94,6 +93,13 @@ a:active {
 			}
 		}
 	}
+}
+
+.print-header {
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-family: $main-font-family;
+  font-weight: 600;
 }
 
 .panel.dark-bg {
@@ -272,4 +278,14 @@ button {
     height: 100%;
     border: 0;
   }
+}
+
+div.item-date {
+	font-size: $item-date-created-font-size;
+	color: $item-date-created-color;
+	margin-bottom: $item-date-created-margin-bottom;
+	line-height: $item-date-created-line-height;
+	font-weight: $item-date-created-font-weight;
+	display: block;
+	width: 100%;
 }

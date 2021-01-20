@@ -24,4 +24,9 @@
     cursor: pointer;
     text-decoration: none;
   }
+  .dark-bg & {
+    color: $dark-bg-button-color;
+    border-color: $dark-bg-button-border-color;
+    background-color: $dark-bg-button-background-color;
+  }
 }

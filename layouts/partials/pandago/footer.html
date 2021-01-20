@@ -1,8 +1,21 @@
 <footer>
-  <div class="sm-links justify-center">
-    {{partial "hugo-sundries/menu" (dict "context" . "menu" .Site.Menus.social)}}
+  {{ if .Site.Data.social}}
+    <div class="d-flex sm-links align-center">
+      {{ partial "pandago/social-media-links.html" . }}
+    </div>
+    {{ end }}
+  <div class="footer-item copyright">
+    &copy; <script>document.write(new Date().getFullYear());</script>
+    {{ if  .Site.Data.footer.copyright.url}}
+    <a href="{{ .Site.Data.footer.copyright.url }}">
+      {{ .Site.Data.footer.copyright.text }}
+    </a>
+    {{ else }}
+      {{ .Site.Data.footer.copyright.text }}
+    {{ end }}
   </div>
-</footer>
-<footer>
-  {{partial "hugo-sundries/menu" (dict "context" . "menu" .Site.Menus.footer)}}
+  {{ range .Site.Data.footer.items }}
+    {{ partial "pandago/footer-item.html" . }}
+  {{ end }}
+  {{ partial "footer-append.html" . }}
 </footer>

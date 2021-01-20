@@ -109,6 +109,10 @@ $button-font-weight: 700 !default;
 $button-text-transform: none !default;
 $button-margin: 5px !default;
 
+$dark-bg-button-color: #fff !default;
+$dark-bg-button-border-color: #fff !default;
+$dark-bg-button-background-color: transparent !default;
+
 /*----------------------------------------------------------------
 FOOTER STRIP TEXT STYLES {CORRESPOND TO "02-bits-and-pieces.less"}
 ----------------------------------------------------------------*/
@@ -167,31 +171,6 @@ $blockquote-font-weight: 600 !default;
 $blockquote-color: inherit !default;
 
 $blockquote-citation-color: #666 !default;
-
-/*---Social media links---*/
-$facebook-icon-fill: #999 !default;
-$instagram-icon-fill: #999 !default;
-$twitter-icon-fill: #999 !default;
-$tripadvisor-icon-fill: #999 !default;
-
-$facebook-icon-hover-fill: #000 !default;
-$instagram-icon-hover-fill: #000 !default;
-$twitter-icon-hover-fill: #000 !default;
-$tripadvisor-icon-hover-fill: #000 !default;
-
-$sm-links-background-color: transparent !default;
-$sm-link-border-radius: 0px !default;
-$sm-link-width: 20px !default;
-$sm-link-height: 20px !default;
-
-$twitter-link-background-color: $sm-links-background-color !default;
-$twitter-link-hover-background-color: transparent !default;
-
-$facebook-link-background-color: $sm-links-background-color !default;
-$facebook-link-hover-background-color: #3B5998 !default;
-
-$instagram-link-background-color: $sm-links-background-color !default;
-$instagram-link-hover-background-color: #9A7658 !default;
 
 $back-to-top-button-background-image: url("images/sprite.png") !default;
 $back-to-top-button-background-size: 300px !default;

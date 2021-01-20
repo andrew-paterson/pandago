@@ -11,20 +11,16 @@
 	border: $blog-item-image-block-border-width solid $blog-item-image-block-border-color;
 }
 
-.blog-layout div.item-date {
-	font-size: $item-date-created-font-size;
-	color: $item-date-created-color;
-	margin-bottom: $item-date-created-margin-bottom;
-	line-height: $item-date-created-line-height;
-	display: block;
-	width: 100%;
-}
+
 // Blog list items on blog list page only
 
 .blog-layout .content-list-item {
-	// width: 100%;
-	padding-top: $blog-item-padding-top;
-	padding-bottom: $blog-item-padding-bottom;
+	&:not(:first-child) {
+    padding-top: $blog-item-padding-top;
+  }
+  &:not(:last-child) {
+    padding-bottom: $blog-item-padding-bottom;
+  }
 }
 
 .blog-layout .content-list-item .item-title {
@@ -81,7 +77,7 @@
 }
 
 .blog-layout .content-list-item {
-	border-bottom: $blog-item-border-bottom-width $blog-item-border-bottom-style $blog-item-border-bottom-color;
+	border-top: $blog-item-border-bottom-width $blog-item-border-bottom-style $blog-item-border-bottom-color;
 }
 
 .blog-layout .content-list-item a.post-thumbnail {

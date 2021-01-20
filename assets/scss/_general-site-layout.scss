@@ -148,60 +148,41 @@ header {
 footer {
 	background: $footer-background-color;
 	text-align: center;
-	display: flex;
-	justify-content: center;
-	flex-shrink: 0;
-	.container {
-		display: flex;
-		justify-content: center;
-	}
-}
-
-footer ul {
-	font-size: 1em;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-	margin: 8px 0;
   align-items: center;
-  @media (max-width: 979px) {
-    flex-direction: column;
-    li {
-      line-height: 150%;
-
-    }
-  }
-}
-
-footer ul li,
-footer .copyright-statement {
-	list-style: none;
-	color: $footer-info-color;
+  flex-shrink: 0;
+  color: $footer-info-color;
 	font-style: $footer-info-font-style;
 	font-weight: $footer-info-font-weight;
 	font-family: $footer-info-font-family;
 	text-transform: $footer-info-text-transform;
-	font-size: $footer-info-font-size;
-	margin: 0px 16px;
+  font-size: $footer-info-font-size;
+  line-height: 150%;
+  padding: $spacer-lg;
+  .footer-item {
+    margin: 0 $spacer-md;
+  }
+  .sm-links {
+    width: 100%;
+    margin-bottom: $spacer-md;
+    justify-content: center;
+  }
+  @media (max-width: 979px) {
+    flex-direction: column;
+  }
 }
 
-footer ul li a {
+
+footer a {
 	color: $footer-info-link-color;
 	text-decoration: $footer-info-link-text-decoration;
 }
 
-footer ul li a:hover {
+footer a:hover {
 	color: $footer-info-link-hover-color;
 	text-decoration: $footer-info-link-hover-text-decoration;
-}
-
-footer svg {
-	fill: $footer-svg-fill;
-	width: 20px;
-	// height: 20px;
-}
-
-footer a svg:hover {
-	fill: $footer-svg-link-hover-fill;
 }
 
 div.buttons-png-loader {
@@ -352,6 +333,7 @@ div.main-block {
 
 #panorama img {
   margin: 0;
+  display: block;
 }
 
 .google-maps-container-outer {

@@ -17,10 +17,6 @@
 <meta property="og:title" content="{{ $page_title }}">
 <title>{{$page_title}}</title>
 <link href="/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
-{{ $sass := resources.Get "scss/style.scss" }}
-{{ $options := (dict "outputStyle" "compressed" "enableSourceMap" true) }}
-{{ $style := $sass | resources.ToCSS $options }}
-<link rel="stylesheet" href="{{ $style.RelPermalink }}" type="text/css" media="screen, projection" />
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
