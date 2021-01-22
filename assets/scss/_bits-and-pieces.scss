@@ -1,3 +1,7 @@
+
+:focus {
+  outline: none;
+}
 body {
 	font-family: $main-font-family;
 }
@@ -164,6 +168,10 @@ ul, ol {
 	margin-top: 0;
 }
 
+.body-text-size {
+  font-size: $body-text-font-size;
+}
+
 .large-text {
 	font-size: $large-text-font-size;
 	line-height: 140%;
@@ -186,7 +194,7 @@ hr {
 	text-align: left;
 }
 
-.text-align-center {
+.text-align-center, .body-text.text-align-center p {
 	text-align: center;
 }
 
@@ -195,7 +203,7 @@ hr {
 }
 
 @media (min-width: 480px) {
-	#main-content .body-text p {
+  .body-text p {
 		text-align: $main-content-body-text-paragraph-text-align;
 	}
 }
@@ -288,4 +296,21 @@ div.item-date {
 	font-weight: $item-date-created-font-weight;
 	display: block;
 	width: 100%;
+}
+
+ul.bordered {
+  padding: 0;
+  margin: 0;
+  li {
+    list-style: none;
+    padding: $spacer-md 0;
+    border-top: 1px solid #ccc;
+    margin-left: 0;
+    &:last-child {
+      border-bottom: 1px solid #ccc;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
 }

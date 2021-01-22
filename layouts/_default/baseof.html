@@ -5,7 +5,7 @@
     {{ partial "stylesheets.html" . }}
     {{ partial "head-append.html" . }}
   </head>
-  <body class="{{ .Params.pageclass }}">
+  <body class="{{ .Site.Params.body_classes }} {{ .Params.pageclass }} ">
     {{ partial "body-prepend.html" . }}
     <div id="wrapper">
       <div class='panels'>

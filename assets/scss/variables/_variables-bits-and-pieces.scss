@@ -101,7 +101,7 @@ $button-hover-color: #fff !default;
 $button-border-width: 2px !default;
 $button-border-style: solid !default;
 $button-border-radius: 4px !default;
-$button-padding: $spacer-lg $spacer-xl !default;
+$button-padding: $spacer-md $spacer-lg !default;
 
 $button-font-family: $main-font-family !default;
 $button-font-size: 1.8em !default;
@@ -113,6 +113,10 @@ $dark-bg-button-color: #fff !default;
 $dark-bg-button-border-color: #fff !default;
 $dark-bg-button-background-color: transparent !default;
 
+$button-outline-color: $button-background-color !default;
+$button-outline-border-color: $button-background-color !default;
+
+$button-lg-padding: $spacer-lg 2*$spacer-xl !default;
 /*----------------------------------------------------------------
 FOOTER STRIP TEXT STYLES {CORRESPOND TO "02-bits-and-pieces.less"}
 ----------------------------------------------------------------*/

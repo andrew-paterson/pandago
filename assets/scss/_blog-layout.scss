@@ -15,6 +15,10 @@
 // Blog list items on blog list page only
 
 .blog-layout .content-list-item {
+  clear: both;
+  &:not(:first-child) {
+    border-top: $blog-item-border-bottom-width $blog-item-border-bottom-style $blog-item-border-bottom-color;
+  }
 	&:not(:first-child) {
     padding-top: $blog-item-padding-top;
   }
@@ -24,31 +28,23 @@
 }
 
 .blog-layout .content-list-item .item-title {
-	font-size: $blog-item-header-font-size/$body-text-font-size;
-	font-family:$blog-item-header-font-family;
-	font-weight: $blog-item-header-font-weight;
-	text-transform: $blog-item-header-text-transform;
-	color: $blog-item-header-color;
-	margin-bottom: $blog-item-header-margin-bottom;
 	margin-top: $blog-item-header-margin-top;
-	line-height: 150%;
 }
 
 .blog-layout .content-list-item .item-title a:link {
-	color: $blog-item-header-link-color;
-  text-decoration: $blog-item-header-link-text-decoration;
+	color: inherit;
+  text-decoration: none;
   font-weight: inherit;
-	font-size: 1em;
 }
 
 .blog-layout .content-list-item .item-title a:visited {
-	color: $blog-item-header-link-visited-color;
-	text-decoration: $blog-item-header-link-text-decoration;
+	color: $link-visited-color;
+	text-decoration: none;
 }
 
 .blog-layout .content-list-item .item-title a:hover {
-	color: $blog-item-header-link-hover-color;
-	text-decoration: $blog-item-header-link-hover-text-decoration;
+	color: $link-hover-color;
+	text-decoration: $link-hover-text-decoration;
 }
 
 .blog-layout .content-list-item div.item-summary {
@@ -76,20 +72,10 @@
 	text-decoration: $item-read-more-link-hover-text-decoration;
 }
 
-.blog-layout .content-list-item {
-	border-top: $blog-item-border-bottom-width $blog-item-border-bottom-style $blog-item-border-bottom-color;
-}
-
 .blog-layout .content-list-item a.post-thumbnail {
 	display: block;
 	float: left;
 	max-width: $blog-item-image-block-max-width;
-}
-
-.sidebar .cat-post-widget {
-	ul {
-		list-style: none;
-	}
 }
 
 .taxonomy-list {

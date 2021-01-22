@@ -2,25 +2,14 @@
 	width: 100%;
 	max-width: $entry-content-max-width;
 	padding: $sidebar-box-padding-y $sidebar-box-padding-x;
-	background-color: $sidebar-box-background-color;
+	background: $sidebar-box-background;
 	border: $sidebar-box-border-width $sidebar-box-border-style $sidebar-box-border-color;
 	box-sizing: border-box;
   flex-shrink: 0;
   
-  ul {
-    li {
-      list-style: none;
-      padding: $spacer-md 0;
-      border-top: 1px solid #ccc;
-      margin-left: 0;
-      margin-bottom: $spacer-md;
-      &:last-child {
-        border-bottom: 1px solid #ccc;
-      }
-      a {
-        text-decoration: none;
-      }
-    }
+  
+  & > *:not(:last-child) {
+    margin-bottom: $spacer-xl;
   }
 }
 

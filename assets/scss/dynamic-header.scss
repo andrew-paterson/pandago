@@ -1,41 +1,26 @@
+// Notea
+// start-tall is gone as a class.
+
+$desktop-header-height-calculated: $dynamic-header-desktop-height or $dynamic-header-height;
+$desktop-header-initial-height-calculated: $dynamic-header-desktop-initial-height or $dynamic-header-initial-height;
+$mobile-header-height-calculated: $dynamic-header-mobile-height or $dynamic-header-height;
+$mobile-header-initial-height-calculated: $dynamic-header-mobile-initial-height or $dynamic-header-initial-height;
+
 #wrapper {
   transition: $dynamic-header-transition;
 }
 
-// TODO position fixed if header fixed class added.
 header {
   transition: $dynamic-header-transition;
   .logo-container {
     flex-shrink: 0;
-    padding: $mobile-logo-spacing-y 0;
-    @media (min-width: 980px) {
-      padding: $desktop-logo-spacing-y 0;
-    }
     a.logo {
       display: block;
     }
     svg, img {
-      height: $dynamic-header-height - 2*$mobile-logo-spacing-y; // TODO IE
       width: auto;
       transition: $dynamic-header-transition;
       margin: 0;
-      @media (min-width: 980px) {
-        height: $dynamic-header-height - 2*$desktop-logo-spacing-y; 
-      }
-    }
-  }
-}
-
-.header-height-tall,
-.header-height-start-tall:not(.scrolled) {
-  header {
-    .logo-container {
-      svg, img {
-        height: $dynamic-header-taller-height - 2*$mobile-logo-spacing-y; // TODO IE
-        @media (min-width: 980px) {
-          height: $dynamic-header-taller-height - 2*$desktop-logo-spacing-y; 
-        }
-      }
     }
   }
 }
@@ -52,7 +37,6 @@ header {
 .header-text-start-light:not(.scrolled) {
   header {
     color: $dynamic-header-light-text-color;
-
     a {
       color: $dynamic-header-light-text-color;
     }
@@ -102,31 +86,37 @@ header {
     top: 0;
     z-index: 9999999;
     @media (max-width: 979px) {
+      #wrapper {
+        padding-top: $mobile-header-height-calculated;
+      }
       nav {
         position: fixed;
         overflow-y: auto;
-        top: $dynamic-header-height;
-        max-height: calc(100vh - #{$dynamic-header-height});
+        top: $mobile-header-height-calculated;
+        max-height: calc(100vh - #{$mobile-header-height-calculated});
+        transition: $dynamic-header-transition
       }
     }
   }
-  &.header-height-tall,
-  &.header-height-start-tall:not(.scrolled) {
+  &:not(.scrolled) {
     @media (max-width: 979px) {
+      &:not(.header-overlay) #wrapper {
+        padding-top: $mobile-header-initial-height-calculated;
+      }
       nav {
-        top: $dynamic-header-taller-height;
-        max-height: calc(100vh - #{$dynamic-header-taller-height});
+        top: $mobile-header-initial-height-calculated;
+        max-height: calc(100vh - #{$mobile-header-initial-height-calculated});
       }
     }
   }
+  @media (min-width: 980px) {
+    #wrapper {
+      padding-top: $desktop-header-height-calculated;
+    }
 
-  #wrapper {
-    padding-top: $dynamic-header-height;
-  }
-
-  &.header-height-tall:not(.header-overlay) #wrapper,
-  &.header-height-start-tall:not(.scrolled):not(.header-overlay) #wrapper {
-    padding-top: $dynamic-header-taller-height;
+    &:not(.scrolled):not(.header-overlay) #wrapper {
+      padding-top: $desktop-header-initial-height-calculated;
+    }
   }
 
   &.header-overlay {
@@ -136,3 +126,106 @@ header {
   }
 }
 
+
+@media(min-width: 980px) {
+  header {
+    .logo-container {
+      padding: $desktop-logo-spacing-y 0;
+      svg, img {
+        height: $desktop-header-height-calculated - 2*$desktop-logo-spacing-y; 
+      }
+    }
+  }
+
+  body:not(.scrolled) {
+    header {
+      .logo-container {
+        svg, img {
+          height: $desktop-header-initial-height-calculated - 2*$desktop-logo-spacing-y;  
+        }
+      }
+    }
+  }
+
+  .desktop-header-fixed {
+    header {
+      position: fixed;
+      top: 0;
+      z-index: 9999999;
+    }
+  
+    #wrapper {
+      padding-top: $desktop-header-height-calculated;
+    }
+  
+    &:not(.scrolled):not(.header-overlay) #wrapper {
+      padding-top: $desktop-header-initial-height-calculated;
+    }
+  
+    &.header-overlay {
+      #wrapper {
+        padding-top: 0;
+      }
+    }
+  }
+}
+
+@media(max-width: 979px) {
+  header {
+    .logo-container {
+      padding: $mobile-logo-spacing-y 0;
+      svg, img {
+        height: $mobile-header-height-calculated - 2*$mobile-logo-spacing-y; 
+      }
+    }
+  }
+
+  body:not(.scrolled) {
+    header {
+      .logo-container {
+        svg, img {
+          height: $mobile-header-initial-height-calculated - 2*$mobile-logo-spacing-y;  
+        }
+      }
+    }
+  }
+
+  .mobile-header-fixed {
+    header {
+      position: fixed;
+      top: 0;
+      z-index: 9999999;
+      @media (max-width: 979px) {
+        nav {
+          position: fixed;
+          overflow-y: auto;
+          top: $mobile-header-height-calculated;
+          max-height: calc(100vh - #{$mobile-header-height-calculated});
+          transition: $dynamic-header-transition
+        }
+      }
+    }
+    &:not(.scrolled) {
+      @media (max-width: 979px) {
+        nav {
+          top: $mobile-header-initial-height-calculated;
+          max-height: calc(100vh - #{$mobile-header-initial-height-calculated});
+        }
+      }
+    }
+  
+    #wrapper {
+      padding-top: $mobile-header-height-calculated;
+    }
+  
+    &:not(.scrolled):not(.header-overlay) #wrapper {
+      padding-top: $mobile-header-initial-height-calculated;
+    }
+  
+    &.header-overlay {
+      #wrapper {
+        padding-top: 0;
+      }
+    }
+  }
+}

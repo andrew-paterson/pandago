@@ -14,6 +14,7 @@
   padding: $button-padding;
   text-decoration: none;
   font-size: $button-font-size;
+  height: auto;
   .body-text & {
     font-size: #{$button-font-size/$body-text-font-size}em;
   }
@@ -28,5 +29,18 @@
     color: $dark-bg-button-color;
     border-color: $dark-bg-button-border-color;
     background-color: $dark-bg-button-background-color;
+  }
+  &.btn-outline {
+    border-color: $button-outline-border-color;
+    color: $button-outline-color;
+    background: transparent;
+    &:hover {
+      color: #fff;
+      background: $button-outline-color;
+    }
+  }
+
+  &.btn-lg {
+    padding: $button-lg-padding;
   }
 }

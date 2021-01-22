@@ -1,5 +1,10 @@
 $dynamic-header-transition: all 0.3s ease-in-out !default;
 $dynamic-header-light-text-color: #fff !default;
 $dynamic-header-dark-text-color: #222 !default;
+
 $dynamic-header-height: 50px !default;
-$dynamic-header-taller-height: 70px !default;
+$dynamic-header-initial-height: $dynamic-header-height !default;
+$dynamic-header-mobile-height: null !default;
+$dynamic-header-mobile-initial-height: null !default;
+$dynamic-header-desktop-height: null !default;
+$dynamic-header-desktop-initial-height: null !default;
