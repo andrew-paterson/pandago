@@ -12,7 +12,8 @@
         {{ partial "pandago/header.html" . }}
         {{ block "main" . }}{{ end }}
       </div>
-        {{ partial "pandago/footer.html" . }}
+      {{ partial "pandago/pre-footer.html" . }}
+      {{ partial "pandago/footer.html" . }}
     </div>
     {{ partial "body-append.html" . }}
   </body>
