@@ -1,0 +1,41 @@
+$label-font-size:  $body-text-font-size !default;
+$label-color: $body-text-color !default;
+$label-font-family: $main-font-family !default;
+$label-font-weight: $body-text-font-weight !default;
+$label-line-height: 120% !default;
+
+$input-border-width: 2px !default;
+$input-border-style: solid !default;
+$input-height: 34px !default;
+$input-font-size: $body-text-font-size !default;
+$input-font-family: $main-font-family !default;
+$input-side-padding: 0px !default;
+$input-top-bottom-padding: 0px !default;
+$input-border-radius: 5px !default;
+$input-color: #333 !default;
+$input-border-color: #c9c9c9 !default;
+$input-background-color: #fff !default;
+$input-hover-border-color: darken($input-border-color, 20%) !default;
+$input-focus-border-color: darken($input-hover-border-color, 20%) !default;
+
+$radio-button-checkbox-width-height: 24px !default;
+$radio-checkbox-selected-background-color: #ccc !default;
+
+$fieldset-border-width: 1px !default;
+$fieldset-border-color: #ccc !default;
+$fieldset-border-radius: 3px !default;
+$fieldset-background-color: transparent !default;
+
+$select-background-color: #F9F9F9 !default;
+$select-border-color: #999 !default;
+$select-border-radius: 3px !default;
+$select-color: #555 !default;
+$select-font-size: 12px !default;
+$select-text-transform: none !default;
+$select-font-family: Arial, Helvetica, sans-serif !default;
+
+$option-background-color: #F9F9F9 !default;
+$option-border-color: #EEEEEE !default;
+$option-text-transform: none !default;
+$option-color: #555555 !default;
+$option-font-family: Arial, Helvetica, sans-serif !default;

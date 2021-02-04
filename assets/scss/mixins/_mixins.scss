@@ -2,28 +2,66 @@
 @mixin box-shadow($shadowNames, $opacity: 0.16) {
   box-shadow: box-shadow($shadowNames, $opacity)
 }
-@mixin linear-gradient($angle: 0deg, $list: ($primary,$secondary)) {
+
+@mixin linear-gradient($angle: 0deg, $list: ($primary, $secondary)) {
   background: first($list);
   background-image: linear-gradient($angle, $list);
 }
 
-@mixin card-box-shadow($level: 1){
-  @if ($level == 1) {
-      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+@mixin card-box-shadow($level: 1) {
+  @if ($level==1) {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   }
-  @if ($level == 2) {
-      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+  @if ($level==2) {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   }
-  @if ($level == 3) {
-      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+  @if ($level==3) {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   }
-  @if ($level == 4) {
-      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+  @if ($level==4) {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   }
-  @if ($level == 5) {
-      box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
+  @if ($level==5) {
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
   }
-  @if ($level == 6) {
-    box-shadow: 0 25px 45px rgba(0,0,0,0.30), 0 20px 16px rgba(0,0,0,0.22);
+
+  @if ($level==6) {
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.30), 0 20px 16px rgba(0, 0, 0, 0.22);
+  }
+}
+
+@function column-width($cols, $margin: $grid-layout-item-margin) {
+  @return calc(#{percentage(1/$cols)} - #{2*$margin});
+}
+
+@mixin flex-grid($cols:1, $media_queries:(), $margin: 10px, ) {
+  display: flex;
+  flex-wrap: wrap;
+  margin: #{-1*$margin};
+  &>* {
+    width: column-width($cols, $margin);
+    margin: $margin;
+  }
+  @each $media_query, $media_query_settings in $media_queries {
+    $item_margin: map-get($media_query_settings, margin);
+    $item_cols: map-get($media_query_settings, cols);
+    @media($media_query) {
+      @if $item_margin {
+        margin: #{-1*$item_margin};
+        &>* {
+          width: column-width(map-get($media_query_settings, cols), $item_margin);
+          margin: $item_margin;
+        } 
+      } @else {
+          &>* {
+          width: column-width(map-get($media_query_settings, cols), $margin);
+          margin: $item_margin;
+        } 
+      }
+    }
   }
 }

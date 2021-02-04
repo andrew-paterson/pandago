@@ -1,0 +1,59 @@
+$main-font-family:  "Lato", sans-serif !default;
+
+$main-header-color: #111 !default;
+$main-header-font-size: 4em !default;
+$main-header-text-align: center !default;
+$main-header-text-transform: none !default;
+$main-header-font-family: 'Merriweather', serif !default;
+$main-header-font-weight: 400 !default;
+$main-header-margin-bottom: $spacer-xl !default;
+$main-header-margin-top: 0 !default;
+$main-header-xl-font-size: 7em;
+
+$body-text-font-family: $main-font-family !default;
+$body-text-font-size: 1.6em !default;
+$body-text-line-height: 170% !default;
+$body-text-color: #666 !default;
+$body-text-font-weight: 400 !default;
+
+$body-text-header-color: #666 !default;
+$body-text-header-text-transform: none !default;
+$body-text-header-font-family: $body-text-font-family !default;
+$body-text-header-font-weight: 600 !default;
+
+$body-text-header-margin-bottom: 0.5em !default;
+$body-text-header-h2-font-size: 2.4em !default;
+$body-text-header-h3-font-size: 2.2em !default;
+$body-text-header-h4-font-size: 2em !default;
+
+$body-text-paragraph-space-after: 1em !default;
+$main-content-body-text-paragraph-text-align: justify !default;
+$body-text-paragraph-line-height: 170% !default;
+
+$large-text-font-size: 2.5em !default;
+
+$link-color: $primary !default;
+$link-text-decoration: underline !default;
+$link-font-weight: $body-text-font-weight !default;
+
+$link-hover-color: darken($primary, 20%) !default;
+$link-hover-text-decoration: underline !default;
+$link-visited-color: grey !default;
+$link-visited-text-decoration: underline !default;
+
+$dark-bg-body-text-color: #fff !default;
+$dark-bg-main-header-color: #fff !default;
+$dark-bg-general-header-color: #fff !default;
+$dark-bg-link-color: #fff !default;
+$dark-bg-link-hover-color: #fff !default;
+$dark-bg-link-visited-color: #fff !default;
+
+$blockquote-background-color: #f8f8f8 !default;
+$blockquote-font-style: italic !default;
+$blockquote-font-family: $main-font-family !default;
+$blockquote-font-weight: 600 !default;
+$blockquote-color: inherit !default;
+$blockquote-citation-color: #666 !default;
+
+$hr-color: #ccc !default;
+$hr-thickness: 2px !default;

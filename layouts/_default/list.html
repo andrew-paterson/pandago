@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{ partial "pandago/content-item/page-banner.html" . }}
-<section id="main-content" class="blog-layout">
+<section id="main-content" class="panel test">
   <div class="container page-gutters padding-y-xl">
     {{ if .Title }}<h1 class="main-header">{{ .Title }}</h1>{{end}}
     {{ if .Content }}
@@ -11,14 +11,16 @@
       </div>
     {{ end }}
     <div class="section-content page-gutters">
-      <div class="main-block body-tex">
-        {{ $page_size := 20 }}
-        {{ if .Params.page_size }}
-          {{ $page_size = .Params.page_size }}
-        {{ end }}
-        {{ range (.Paginator $page_size).Pages }}
-          {{ .Render "list_item" }}
-        {{ end }}
+      <div class="main-block">
+        <div class="content-list">
+          {{ $page_size := 20 }}
+          {{ if .Params.page_size }}
+            {{ $page_size = .Params.page_size }}
+          {{ end }}
+          {{ range (.Paginator $page_size).Pages }}
+            {{ .Render "list_item" }}
+          {{ end }}
+        </div>
         <div class="pagination-links">
           {{ template "_internal/pagination.html" . }}
         </div>

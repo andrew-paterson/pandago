@@ -1,4 +1,5 @@
 <footer>
+  {{ partial "footer-prepend.html" . }}
   {{ if .Site.Data.social}}
     <div class="d-flex sm-links align-center">
       {{ partial "pandago/social-media-links.html" . }}

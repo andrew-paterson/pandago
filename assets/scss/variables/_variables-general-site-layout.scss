@@ -1,6 +1,3 @@
-/*---------------------------------------------------------
-CONTENT AREA LAYOUT.LESS
----------------------------------------------------------*/
 $pc-page-gutter-left-right: 30px !default;
 $pc-main-content-box-border-width: 0px !default;
 $pc-main-content-box-outer-padding-top: 40px !default;
@@ -11,7 +8,6 @@ $pc-body-text-padding-left-right: 0px !default;
 $pc-body-text-padding-top: 0px !default;
 $pc-body-text-padding-bottom: 0px !default;
 $body-background-color: #fff !default;
-
 
 $desktop-header-container-max-width: 100% !default;
 
@@ -45,3 +41,21 @@ $sidebar-box-padding-x: $spacer-lg !default;
 $footer-background-color: #f5f5f5 !default;
 
 $panel-dark-bg-default-background-color: #bbb;
+
+$footer-info-color: #777 !default;
+$footer-info-font-style: normal !default;
+$footer-info-font-size: 1.3em !default;
+$footer-info-font-weight: 400 !default;
+$footer-info-font-family: $main-font-family !default;
+$footer-info-text-transform: none !default;
+$footer-info-link-color: $footer-info-color !default;
+$footer-info-link-text-decoration: none !default;
+$footer-info-link-hover-color: #000 !default;
+$footer-info-link-hover-text-decoration: none !default;
+$footer-svg-fill: $footer-info-color !default;
+$footer-svg-link-hover-fill: $footer-info-link-hover-color !default;
+
+$grid-layout-item-margin: $spacer-md !default;
+$grid-layout-item-padding: $spacer-lg !default;
+
+$list-page-intro-max-width: 700px !default;

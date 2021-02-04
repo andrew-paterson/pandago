@@ -1,0 +1,26 @@
+$button-background-color: $primary !default;
+$button-hover-background-color: $primary !default;
+$button-border-color: $primary !default;
+$button-hover-border-color: $button-hover-background-color !default;
+$button-color: #fff !default;
+$button-hover-color: #fff !default;
+
+$button-border-width: 2px !default;
+$button-border-style: solid !default;
+$button-border-radius: 4px !default;
+$button-padding: $spacer-md $spacer-lg !default;
+
+$button-font-family: $main-font-family !default;
+$button-font-size: 1.8em !default;
+$button-font-weight: 700 !default;
+$button-text-transform: none !default;
+$button-margin: 5px !default;
+
+$dark-bg-button-color: #fff !default;
+$dark-bg-button-border-color: #fff !default;
+$dark-bg-button-background-color: transparent !default;
+
+$button-outline-color: $button-background-color !default;
+$button-outline-border-color: $button-background-color !default;
+
+$button-lg-padding: $spacer-lg 2*$spacer-xl !default;

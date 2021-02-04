@@ -1,0 +1,21 @@
+:focus {
+  outline: none;
+}
+
+.hidden {
+	display: none;
+}
+
+.show-below-979px {
+	display: none;
+}
+
+.item-date {
+	font-size: $item-date-created-font-size;
+	color: $item-date-created-color;
+	margin-bottom: $item-date-created-margin-bottom;
+	line-height: $item-date-created-line-height;
+	font-weight: $item-date-created-font-weight;
+	display: block;
+	width: 100%;
+}

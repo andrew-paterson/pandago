@@ -1,11 +1,13 @@
 <header>
   <div class="container">
-      {{ partial "pandago/mobile-nav-hamburger.html" . }}
+  {{ partial "header-prepend.html" . }}
+  {{ partial "pandago/mobile-nav-hamburger.html" . }}
     <div class="logo-container">
       <a class="logo" href="/">
         {{ partial "logo.html" . }}
       </a>
     </div>
     {{ partial "pandago/main-nav.html" . }}
+    {{ partial "header-append.html" . }}
   </div>
 </header>

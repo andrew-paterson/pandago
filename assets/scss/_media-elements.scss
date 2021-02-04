@@ -1,0 +1,40 @@
+figure {
+  margin: 0;
+  margin-bottom: $spacer-xl;
+  img {
+    margin: 0;
+  }
+}
+
+figcaption {
+  color: $figcaption-color;
+  font-size: $figcaption-font-size;
+  font-family: $figcaption-font-family;
+  background: $figcaption-background;
+  line-height: $figcaption-line-height;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	margin-bottom: $spacer-lg;
+}
+
+svg {
+	width: auto;
+	height: auto;
+}
+
+.embedded-video {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
