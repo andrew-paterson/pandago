@@ -12,6 +12,9 @@ figcaption {
   font-family: $figcaption-font-family;
   background: $figcaption-background;
   line-height: $figcaption-line-height;
+  .body-text & {
+    font-size: #{$figcaption-font-size/$body-text-font-size}em;
+  }
 }
 
 img {

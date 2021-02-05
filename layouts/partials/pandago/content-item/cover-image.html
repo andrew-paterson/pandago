@@ -1,7 +1,5 @@
-{{ if .Params.cover_image }}
-  {{ if fileExists ( print "static" .Params.cover_image) }}
-    <a href="{{ .RelPermalink }}" class="thumbnail-link">
-      <img class="item-thumbnail" src="{{ .Params.cover_image }}" />
-    </a>
+{{ if .context.Params.cover_image }}
+  {{ if fileExists ( print "static" .context.Params.cover_image) }}
+      {{ partial "hugo-sundries/responsive-image.html" (dict "context" .context "image_path" .context.Params.cover_image "sizes" .sizes "image_link" .image_link "image_link_class" .image_link_class) }}
   {{ end }}
 {{ end }}
