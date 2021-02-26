@@ -14,12 +14,15 @@ header {
   transition: $dynamic-header-transition;
   .logo-container {
     flex-shrink: 0;
+    height: 100%;
     a.logo {
+      height: 100%;
       display: block;
     }
     svg, img {
+      height: 100%;
       width: auto;
-      transition: $dynamic-header-transition;
+      // transition: $dynamic-header-transition;
       margin: 0;
     }
   }
@@ -184,8 +187,9 @@ header {
   }
 
   body:not(.scrolled) {
-    height: $mobile-header-initial-height-calculated;
     header {
+    height: $mobile-header-initial-height-calculated;
+
       .logo-container {
         svg, img {
           // height: $mobile-header-initial-height-calculated - 2*$mobile-logo-spacing-y;  

@@ -1,6 +1,18 @@
-{{ $pano_page_banner := (or .Params.pano_page_banner .Site.Params.default_pano_page_banner)}}
-{{ $standard_page_banner := (or .Params.standard_page_banner .Site.Params.default_standard_page_banner)}}
 
+{{ $location := .Section }}
+{{ if .Params.url }}
+  {{ $location = path.Base .Params.url }}
+{{ end }}
+{{ $pano_page_banner_auto := "" }}
+{{ if fileExists ( print "static" .Site.Params.pano_page_banner_dir "/" $location ".jpg") }}
+  {{ $pano_page_banner_auto = (print .Site.Params.pano_page_banner_dir "/" $location ".jpg" )}}
+{{ end }}
+{{ $standard_page_banner_auto := "" }}
+{{ if fileExists ( print "static" .Site.Params.standard_page_banner_dir "/" $location ".jpg") }}
+  {{ $standard_page_banner_auto = (print .Site.Params.standard_page_banner_dir "/" $location ".jpg" )}}
+{{ end }}
+{{ $pano_page_banner := (or .Params.pano_page_banner $pano_page_banner_auto .Site.Params.default_pano_page_banner)}}
+{{ $standard_page_banner := (or .Params.standard_page_banner $standard_page_banner_auto .Site.Params.default_standard_page_banner)}}
 {{ if $pano_page_banner }}
   <section id="panorama">
     <picture>
