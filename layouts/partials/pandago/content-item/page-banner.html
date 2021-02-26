@@ -1,9 +1,12 @@
-{{ if isset .Params "pano_page_banner" }}
+{{ $pano_page_banner := (or .Params.pano_page_banner .Site.Params.default_pano_page_banner)}}
+{{ $standard_page_banner := (or .Params.standard_page_banner .Site.Params.default_standard_page_banner)}}
+
+{{ if $pano_page_banner }}
   <section id="panorama">
     <picture>
-      {{ partial "hugo-sundries/responsive-source-element.html" (dict "context" . "image_path" .Params.pano_page_banner "media" "(min-width: 600px)" "element" "source")}}
-      {{ partial "hugo-sundries/responsive-source-element.html" (dict "context" . "image_path" .Params.standard_page_banner "media" "(max-width: 599px)" "element" "source")}}
-      <img src="{{ .Params.pano_page_banner }}">
+      {{ partial "hugo-sundries/responsive-source-element.html" (dict "context" . "image_path" $pano_page_banner "media" "(min-width: 600px)" "element" "source")}}
+      {{ partial "hugo-sundries/responsive-source-element.html" (dict "context" . "image_path" $standard_page_banner "media" "(max-width: 599px)" "element" "source")}}
+      <img src="{{ $pano_page_banner }}">
     </picture>
   </section>
 {{end}}

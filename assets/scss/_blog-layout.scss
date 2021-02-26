@@ -78,13 +78,16 @@
 	max-width: $blog-item-image-block-max-width;
 }
 
+$taxonomy-list-font-size: 0.8*$body-text-font-size;
+
 .taxonomy-list {
+  font-size: $taxonomy-list-font-size;
   ul {
     display: flex;
     
     li {
       list-style: none;
-      text-transform: capitalize;
+      margin-right: $spacer-lg;
       &.list-header {
         font-weight: 600;
         margin-left: 0;

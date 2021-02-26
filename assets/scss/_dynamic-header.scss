@@ -129,19 +129,21 @@ header {
 
 @media(min-width: 980px) {
   header {
+    height: $desktop-header-height-calculated;
     .logo-container {
       padding: $desktop-logo-spacing-y 0;
       svg, img {
-        height: $desktop-header-height-calculated - 2*$desktop-logo-spacing-y; 
+        // height: $desktop-header-height-calculated - 2*$desktop-logo-spacing-y; 
       }
     }
   }
 
   body:not(.scrolled) {
     header {
+      height: $desktop-header-initial-height-calculated;
       .logo-container {
         svg, img {
-          height: $desktop-header-initial-height-calculated - 2*$desktop-logo-spacing-y;  
+          // height: $desktop-header-initial-height-calculated - 2*$desktop-logo-spacing-y;  
         }
       }
     }
@@ -172,19 +174,21 @@ header {
 
 @media(max-width: 979px) {
   header {
+    height: $mobile-header-height-calculated;
     .logo-container {
       padding: $mobile-logo-spacing-y 0;
       svg, img {
-        height: $mobile-header-height-calculated - 2*$mobile-logo-spacing-y; 
+        // height: $mobile-header-height-calculated - 2*$mobile-logo-spacing-y; 
       }
     }
   }
 
   body:not(.scrolled) {
+    height: $mobile-header-initial-height-calculated;
     header {
       .logo-container {
         svg, img {
-          height: $mobile-header-initial-height-calculated - 2*$mobile-logo-spacing-y;  
+          // height: $mobile-header-initial-height-calculated - 2*$mobile-logo-spacing-y;  
         }
       }
     }
