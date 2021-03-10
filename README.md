@@ -164,6 +164,9 @@ The following settings apply to the `_index.md` page of a content section using 
 
 `page_size` 
 
+`sort_by` name of the param to sort items by.
+`reverse_order` set to `true` to reverse the ordering.
+
 The number of itmes per page for contet lists. Defaults to 20. 
 ## Content item params
 

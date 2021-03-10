@@ -17,7 +17,14 @@
           {{ if .Params.page_size }}
             {{ $page_size = .Params.page_size }}
           {{ end }}
-          {{ range (.Paginator $page_size).Pages }}
+          {{ $pages := (.Paginator $page_size).Pages }}
+          {{ if .Params.sort_by }}
+            {{ $pages = ((.Paginator $page_size).Pages.ByParam .Params.sort_by)}}
+          {{ end }}
+          {{ if .Params.reverse_order }}
+            {{ $pages = $pages.Reverse}}
+          {{ end }}
+          {{ range $pages }}
             {{ .Render "list_item" }}
           {{ end }}
         </div>
