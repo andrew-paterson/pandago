@@ -1,8 +1,13 @@
 figure {
   margin: 0;
   margin-bottom: $spacer-xl;
+  padding: $figure-element-padding;
+  background: $figure-element-background;
+  border: $figure-element-border;
+  display: inline-block;
   img {
     margin: 0;
+    display: block;
   }
 }
 
@@ -12,6 +17,9 @@ figcaption {
   font-family: $figcaption-font-family;
   background: $figcaption-background;
   line-height: $figcaption-line-height;
+  padding: $figcaption-padding;
+  display: flex;
+  align-items: center;
   .body-text & {
     font-size: #{$figcaption-font-size/$body-text-font-size}em;
   }

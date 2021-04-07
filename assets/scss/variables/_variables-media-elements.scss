@@ -1,5 +1,9 @@
+$figure-element-padding: 0 !default;
+$figure-element-background: #eee !default;
+$figure-element-border: none !default;
 $figcaption-color: #666 !default;
+$figcaption-padding: $spacer-md !default;
 $figcaption-font-size: 0.9*$body-text-font-size !default;
 $figcaption-font-family: $main-font-family !default;
 $figcaption-background: transparent !default;
-$figcaption-line-height: 110% !default;
+$figcaption-line-height: 100% !default;

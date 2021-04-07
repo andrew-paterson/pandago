@@ -65,3 +65,28 @@
     }
   }
 }
+@mixin dark-bg-elements {
+  .main-header {
+		color: $dark-bg-main-header-color;
+  }
+  h1, h2, h3, h4, h5, h6 {
+		color: $dark-bg-general-header-color;
+	}
+	.body-text, h1, h2, h3, h4 {
+		color: $dark-bg-body-text-color;
+  }
+  a {
+    color: $dark-bg-link-color;
+    &:hover {
+      color: $dark-bg-link-hover-color;
+    }
+    &:visited {
+      color: $dark-bg-link-visited-color;
+    }
+  }
+  .btn {
+    background: transparent;
+    border-color: $dark-bg-body-text-color;
+    color: $dark-bg-body-text-color;
+  }
+}
