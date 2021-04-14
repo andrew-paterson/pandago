@@ -1,0 +1,5 @@
+{{ range .Site.Data.social }}
+  <a href="{{ .url }}" class="sm-link">
+    {{ partial (print "hugo-sundries/svg/brands/" .platform ".svg" ) }}
+  </a>
+{{ end }}

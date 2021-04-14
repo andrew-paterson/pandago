@@ -3,22 +3,22 @@
 {{ if .Params.url }}
   {{ $location = path.Base .Params.url }}
 {{ end }}
-{{ $pano_page_banner_auto := "" }}
-{{ if fileExists ( print "static" .Site.Params.pano_page_banner_dir "/" $location ".jpg") }}
-  {{ $pano_page_banner_auto = (print .Site.Params.pano_page_banner_dir "/" $location ".jpg" )}}
+{{ $page_banner_for_large_screens_auto := "" }}
+{{ if fileExists ( print "static" .Site.Params.page_banner_for_large_screens_dir "/" $location ".jpg") }}
+  {{ $page_banner_for_large_screens_auto = (print .Site.Params.page_banner_for_large_screens_dir "/" $location ".jpg" )}}
 {{ end }}
-{{ $standard_page_banner_auto := "" }}
-{{ if fileExists ( print "static" .Site.Params.standard_page_banner_dir "/" $location ".jpg") }}
-  {{ $standard_page_banner_auto = (print .Site.Params.standard_page_banner_dir "/" $location ".jpg" )}}
+{{ $page_banner_for_small_screens_auto := "" }}
+{{ if fileExists ( print "static" .Site.Params.page_banner_for_small_screens_dir "/" $location ".jpg") }}
+  {{ $page_banner_for_small_screens_auto = (print .Site.Params.page_banner_for_small_screens_dir "/" $location ".jpg" )}}
 {{ end }}
-{{ $pano_page_banner := (or .Params.pano_page_banner $pano_page_banner_auto .Site.Params.default_pano_page_banner)}}
-{{ $standard_page_banner := (or .Params.standard_page_banner $standard_page_banner_auto .Site.Params.default_standard_page_banner)}}
-{{ if $pano_page_banner }}
+{{ $page_banner_for_large_screens := (or .Params.page_banner_for_large_screens $page_banner_for_large_screens_auto .Site.Data.page_banners.default_page_banner_for_large_screens)}}
+{{ $page_banner_for_small_screens := (or .Params.page_banner_for_small_screens $page_banner_for_small_screens_auto .Site.Data.page_banners.default_page_banner_for_small_screens)}}
+{{ if $page_banner_for_large_screens }}
   <section id="panorama">
     <picture>
-      {{ partial "hugo-sundries/responsive-source-element.html" (dict "context" . "image_path" $pano_page_banner "media" "(min-width: 600px)" "element" "source")}}
-      {{ partial "hugo-sundries/responsive-source-element.html" (dict "context" . "image_path" $standard_page_banner "media" "(max-width: 599px)" "element" "source")}}
-      <img src="{{ $pano_page_banner }}">
+      {{ partial "hugo-sundries/responsive-source-element.html" (dict "context" . "image_path" $page_banner_for_large_screens "media" "(min-width: 600px)" "element" "source")}}
+      {{ partial "hugo-sundries/responsive-source-element.html" (dict "context" . "image_path" $page_banner_for_small_screens "media" "(max-width: 599px)" "element" "source")}}
+      <img src="{{ $page_banner_for_large_screens }}">
     </picture>
   </section>
 {{end}}

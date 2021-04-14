@@ -176,7 +176,7 @@ These apply to any content files in the `/content` folder of the site.
 
 Path to image to display in the top panel of the screen at above 600px (Recommended dimensions 1920 x 590)
 
-`standard_page_banner`
+`page_banner_for_small_screens`
 
 Path to image to display in the top panel of the screen at 600px and below (Recommended dimensions 4:3)
 

@@ -81,3 +81,4 @@ document.querySelectorAll('ul.level-2').forEach(childMenu => {
     childMenu.parentElement.classList.remove('highlighted');
   };
 })
+
