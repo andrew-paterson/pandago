@@ -349,6 +349,7 @@ Examples
   default/list.html
   layout class config
 
+  Make sort params for index.md for sections an object with sort_by and sort _dir, being asc or desc.
 TODO Docs
 
   Completely overriding site JS, and including script bundles.
