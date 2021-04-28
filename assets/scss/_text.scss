@@ -164,6 +164,13 @@ ul.bordered {
 	}
 }
 
+.text-smaller {
+	font-size: 0.9em;
+  &.body-text {
+		font-size: 0.9*$body-text-font-size;
+	}
+}
+
 .text-align-left {
 	text-align: left;
 }
