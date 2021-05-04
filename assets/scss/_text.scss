@@ -38,7 +38,12 @@ h4 {
 a {
 	color: $link-color;
 	text-decoration: $link-text-decoration;
-	font-weight: $link-font-weight;
+	font-weight: $link-font-weight; 
+  .body-text & {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+  
 	.dark-bg & {
 		color: #fff;
   }

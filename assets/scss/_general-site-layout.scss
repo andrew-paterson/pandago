@@ -168,6 +168,12 @@ footer {
 
   .footer-item {
     margin: 0 $spacer-md;
+    display: flex;
+    align-items: center;
+  }
+
+  svg {
+    height: 20px;
   }
 
   .sm-links {
@@ -181,8 +187,9 @@ footer {
   }
 }
 
-
 footer a {
+  display: flex;
+  align-items: center;
   color: $footer-info-link-color;
   text-decoration: $footer-info-link-text-decoration;
 }
@@ -226,6 +233,7 @@ div.section-content {
 .main-block {
   flex-grow: 1;
   max-width: $main-block-max-width;
+  width: 100%;
 }
 
 @media (min-width: 980px) {

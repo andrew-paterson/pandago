@@ -11,9 +11,13 @@
   {{ else if (or (eq .type "email") (eq .type "phone"))}}
     {{ $url = (print $url_prefix .text) }}
   {{ end }}
+  {{ $icon := ""}}
+  {{ if .icon }}
+    {{ $icon = (partial (path.Join "hugo-sundries/svg/brands" (print .icon ".svg")))}}
+  {{ end }}
   {{ if $url }}
-    <a href="{{ $url | safeURL }}">{{ .text }}</a>
+    <a href="{{ $url | safeURL }}">{{ $icon }}{{ .text }}</a>
   {{ else }}
-    {{ .text }}
+    {{ $icon }}{{ .text }}
   {{ end }}
 </div>

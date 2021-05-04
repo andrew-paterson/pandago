@@ -1,11 +1,11 @@
-$table-border-color: #888 !default;
-$table-header-cell-color: #fff !default;
-$table-header-cell-background-color: #bbb !default;
-$table-header-cell-border-color: #666 !default;
-$table-header-cell-text-transform: uppercase !default;
-$table-header-cell-font-family: $main-font-family !default;
+$table-border-color: #ccc !default;
+$table-header-cell-color: inherit !default;
+$table-header-cell-background-color: #fff !default;
+$table-header-cell-border-color: #ccc !default;
+$table-header-cell-text-transform: none !default;
+$table-header-cell-font-family: inherit !default;
 $table-header-cell-font-weight: 700 !default;
-$table-header-cell-font-size: 1.4em !default;
+$table-header-cell-font-size: inherit !default;
 
 $table-cell-padding-top: 5px !default;
 $table-cell-padding-bottom: 5px !default;

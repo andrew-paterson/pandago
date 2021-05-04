@@ -1,5 +1,7 @@
 {{ range .Site.Data.social }}
   <a href="{{ .url }}" class="sm-link">
-    {{ partial (print "hugo-sundries/svg/brands/" .platform ".svg" ) }}
+    {{ if .icon }}
+    {{ partial (path.Join "hugo-sundries/svg/brands" (print .icon ".svg"))}}
+    {{ end }}
   </a>
 {{ end }}
