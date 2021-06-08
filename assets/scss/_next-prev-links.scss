@@ -1,5 +1,6 @@
 .next-prev-links {
   display: flex;
+  clear: both;
   justify-content: space-between;
   margin-top: $next-prev-links-margin-top;
   margin-bottom: $next-prev-links-margin-bottom;

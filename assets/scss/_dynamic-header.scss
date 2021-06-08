@@ -16,12 +16,13 @@ header {
     flex-shrink: 0;
     height: 100%;
     a.logo {
-      height: 100%;
+      // height: 100%;
+      display: block;
     }
     svg, img {
-      height: 100%;
+      // height: 100%;
       width: auto;
-      // transition: $dynamic-header-transition;
+      transition: $dynamic-header-transition;
       margin: 0;
     }
   }
@@ -135,7 +136,7 @@ header {
     .logo-container {
       padding: $desktop-logo-spacing-y 0;
       svg, img {
-        // height: $desktop-header-height-calculated - 2*$desktop-logo-spacing-y; 
+        height: $desktop-header-height-calculated - 2*$desktop-logo-spacing-y; 
       }
     }
   }
@@ -145,7 +146,7 @@ header {
       height: $desktop-header-initial-height-calculated;
       .logo-container {
         svg, img {
-          // height: $desktop-header-initial-height-calculated - 2*$desktop-logo-spacing-y;  
+          height: $desktop-header-initial-height-calculated - 2*$desktop-logo-spacing-y;  
         }
       }
     }
@@ -180,7 +181,7 @@ header {
     .logo-container {
       padding: $mobile-logo-spacing-y 0;
       svg, img {
-        // height: $mobile-header-height-calculated - 2*$mobile-logo-spacing-y; 
+        height: $mobile-header-height-calculated - 2*$mobile-logo-spacing-y; 
       }
     }
   }
@@ -191,7 +192,7 @@ header {
 
       .logo-container {
         svg, img {
-          // height: $mobile-header-initial-height-calculated - 2*$mobile-logo-spacing-y;  
+          height: $mobile-header-initial-height-calculated - 2*$mobile-logo-spacing-y;  
         }
       }
     }
