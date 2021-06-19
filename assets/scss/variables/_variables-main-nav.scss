@@ -3,7 +3,7 @@ GENERAL (APPLY TO ALL MEDIA QUERIES)
 ---------------------------------------------------------------------------------*/
 
 $main-nav-font-weight: 600 !default;
-
+$mobile-menu-threshold: 979px !default;
 /*---------------------------------------------------------------------------------
 PC NAV ITEMS - ALL LEVELS
 ---------------------------------------------------------------------------------*/
@@ -54,6 +54,8 @@ $desktop-main-nav-level-2-hover-color: $desktop-main-nav-level-1-hover-color !de
 $desktop-main-nav-level-2-hover-background-color: $desktop-main-nav-level-2-background-color !default;
 $desktop-main-nav-level-2-active-color: $desktop-main-nav-level-1-hover-color !default;
 $desktop-main-nav-level-2-active-background-color: $desktop-main-nav-level-2-background-color !default;
+
+$desktop-main-nav-level-3-background-color:  $desktop-main-nav-level-2-background-color !default;
 
 $mobile-main-nav-toggler-top-bottom-padding: 18px !default;
 $mobile-main-nav-toggler-side-padding: 20px !default;

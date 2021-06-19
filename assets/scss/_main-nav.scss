@@ -33,7 +33,7 @@ nav.main ul li.active > a:hover {
 	cursor: default;
 }
 
-@media (min-width: 980px) {
+@media (min-width: $mobile-menu-threshold + 1) {
 	.mobile-nav-toggler {
 		display: none;
 	}
@@ -134,6 +134,7 @@ nav.main ul li.active > a:hover {
 		padding-top: $desktop-main-nav-level-2-padding-y;
 		padding-bottom: $desktop-main-nav-level-2-padding-y;
 		min-width: $desktop-main-nav-level-2-min-width;
+    white-space: nowrap;
 	}
 
 	nav.main ul.level-2 li > a:hover,
@@ -160,14 +161,15 @@ nav.main ul li.active > a:hover {
     flex-direction: column;
     li {
       a, span {
-        padding-left: 2*$desktop-main-nav-item-padding-left-right;
+        padding-left: 3*$desktop-main-nav-item-padding-left-right;
+		    background-color: $desktop-main-nav-level-3-background-color;
       }
       
     }
   }
 }
 
-@media (max-width: 979px) {
+@media (max-width: $mobile-menu-threshold) {
 	.mobile-nav-toggler {
 		background-color: $mobile-main-nav-toggler-background-color;
 		width: 22px;
