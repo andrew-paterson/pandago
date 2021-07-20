@@ -1,0 +1,22 @@
+{
+  "name": "pandago",
+  "version": "v1.0.31",
+  "description": "In the consuming app, add the following in your config file.",
+  "main": "create-release.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrew-paterson/pandago.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrew-paterson/pandago/issues"
+  },
+  "homepage": "https://github.com/andrew-paterson/pandago#readme",
+  "dependencies": {
+    "tag-and-release": "^1.0.12"
+  }
+}
