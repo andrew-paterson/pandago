@@ -12,7 +12,7 @@ const fs = require('fs');
     return line;
   }).join('\n');
   fs.writeFileSync('./go.mod', pandogoModFileUpdated);
-  console.log('test');
+  console.log(`Updated hugo-sundries version in pandago/go.mod to  ${res.results.tag}`);
   const final = await tagAndRelease.run({commitMessage: pandagoCommitMessage});
   console.log(final)
 
