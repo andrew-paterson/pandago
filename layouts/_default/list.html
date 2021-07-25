@@ -5,7 +5,7 @@
 {{ end }}
 {{ $pages := (.Paginator $page_size).Pages }}
 {{ partial "pandago/content-item/page-banner.html" . }}
-<section id="main-content" class="panel test">
+<section id="main-content" class="panel">
   <div class="container page-gutters padding-y-xl">
     {{ if .Title }}<h1 class="main-header">{{ .Title }}</h1>{{end}}
     {{ if .Content }}
@@ -15,7 +15,7 @@
         </div>
       </div>
     {{ end }}
-    <div class="section-content page-gutters">
+    <div class="section-content">
       {{ if gt (len $pages) 0}}
         <div class="main-block">
           <div class="content-list">

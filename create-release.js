@@ -5,6 +5,7 @@ const fs = require('fs');
 
 (async function () {
   const res = await tagAndRelease.run({repo: '../hugo-sundries', commitMessage: hugoCommitMessage});
+  console.log(res)
   const pandogoModFileUpdated = fs.readFileSync('./go.mod', 'utf-8').split('\n').map(line => {
     if (line.indexOf('require github.com/andrew-paterson/hugo-sundries') > -1) {
       line = `require github.com/andrew-paterson/hugo-sundries ${res.results.tag} // indirect`
