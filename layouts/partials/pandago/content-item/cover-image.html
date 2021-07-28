@@ -1,5 +1,4 @@
 {{ $sizes := (or .sizes (partial "hugo-sundries/fallback-srcset-sizes.html" (dict "context" .context "type" "list_item" )))}}
-<script>console.log({{ .sizes }})</script>
 {{ if .context.Params.cover_image }}
   {{ if fileExists ( print "static" .context.Params.cover_image) }}
       {{ partial "hugo-sundries/responsive-image.html" (dict "context" .context "image_path" .context.Params.cover_image "sizes" $sizes "image_link" .image_link "image_link_class" .image_link_class "alt" .context.Params.cover_image_alt "caption" .context.Params.cover_image_caption) }}

@@ -13,7 +13,6 @@
 {{ end }}
 {{ $page_banner_for_large_screens := (or .Params.page_banner_for_large_screens $page_banner_for_large_screens_auto .Site.Params.page_banners.default_page_banner_for_large_screens)}}
 {{ $page_banner_for_small_screens := (or .Params.page_banner_for_small_screens $page_banner_for_small_screens_auto .Site.Params.page_banners.default_page_banner_for_small_screens)}}
-<script>console.log({{$page_banner_for_large_screens}})</script>
 
 {{ if $page_banner_for_large_screens }}
   <section id="panorama">
