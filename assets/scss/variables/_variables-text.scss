@@ -36,7 +36,7 @@ $link-color: $primary !default;
 $link-text-decoration: underline !default;
 $link-font-weight: $body-text-font-weight !default;
 
-$link-hover-color: darken($primary, 20%) !default;
+$link-hover-color: $primary !default;
 $link-hover-text-decoration: underline !default;
 $link-visited-color: grey !default;
 $link-visited-text-decoration: underline !default;
