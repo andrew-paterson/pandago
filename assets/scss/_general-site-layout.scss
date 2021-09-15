@@ -350,6 +350,15 @@ div.section-content {
   top: 0;
 }
 
+.position-fixed {
+  position: fixed;
+  bottom: 0;
+}
+
+.bottom-0 {
+  bottom: 0
+}
+
 // IE Hacks
 @media all and (-ms-high-contrast: none),
 (-ms-high-contrast: active) {

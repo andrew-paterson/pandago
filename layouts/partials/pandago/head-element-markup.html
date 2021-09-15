@@ -1,5 +1,5 @@
 {{ $page_title := ""}}
-{{if (or (eq .Site.Title .Title) (.IsHome)) }}
+{{if (or (eq .Site.Title .Title) (not .Title) (.IsHome)) }}
   {{ $page_title = .Site.Title}}
 {{ else }}
   {{ $page_title = (print .Title " | " .Site.Title )}}

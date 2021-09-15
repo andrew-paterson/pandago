@@ -15,6 +15,13 @@
   text-decoration: none;
   font-size: $button-font-size;
   height: auto;
+  svg {
+    margin-right: 10px;
+    vertical-align: middle;
+    height: 16px;
+    width: auto;
+    fill: $button-color;
+  }
   .body-text & {
     font-size: #{$button-font-size/$body-text-font-size}em;
   }
@@ -29,18 +36,42 @@
     color: $dark-bg-button-color;
     border-color: $dark-bg-button-border-color;
     background-color: $dark-bg-button-background-color;
+    svg {
+      fill: $dark-bg-button-color;
+    }
   }
   &.btn-outline {
     border-color: $button-outline-border-color;
     color: $button-outline-color;
     background: transparent;
+    svg {
+      fill: $button-outline-color;
+    }
     &:hover {
       color: #fff;
       background: $button-outline-color;
+      svg {
+        fill: #fff;
+      }
+    }
+    
+  }
+  &.btn-outline-white {
+    border-color: #fff;
+    color: #fff;
+    background: transparent;
+    &:hover {
+      color: #222;
+      background: #fff;
+      svg {
+        fill: #222;
+      }
     }
   }
 
   &.btn-lg {
     padding: $button-lg-padding;
   }
+
+  
 }
