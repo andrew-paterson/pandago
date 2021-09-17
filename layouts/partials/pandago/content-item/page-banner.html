@@ -4,8 +4,10 @@
   {{ $location = path.Base .Params.url }}
 {{ end }}
 {{ $page_banner_for_large_screens_auto := "" }}
-{{ if fileExists ( print "static" .Site.Params.page_banner_for_large_screens_dir "/" $location ".jpg") }}
-  {{ $page_banner_for_large_screens_auto = (print .Site.Params.page_banner_for_large_screens_dir "/" $location ".jpg" )}}
+{{ if $location }}
+	{{ if fileExists ( print "static" .Site.Params.page_banner_for_large_screens_dir "/" $location ".jpg") }}
+		{{ $page_banner_for_large_screens_auto = (print .Site.Params.page_banner_for_large_screens_dir "/" $location ".jpg" )}}
+	{{ end }}
 {{ end }}
 {{ $page_banner_for_small_screens_auto := "" }}
 {{ if fileExists ( print "static" .Site.Params.page_banner_for_small_screens_dir "/" $location ".jpg") }}

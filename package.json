@@ -1,6 +1,6 @@
 {
   "name": "pandago",
-  "version": "v1.0.41",
+  "version": "v1.0.42",
   "description": "In the consuming app, add the following in your config file.",
   "main": "create-release.js",
   "scripts": {
@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/andrew-paterson/pandago#readme",
   "dependencies": {
-    "tag-and-release": "^1.0.12"
+    "tag-and-release": "^1.0.13"
   }
 }
