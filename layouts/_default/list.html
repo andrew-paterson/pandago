@@ -5,8 +5,8 @@
 {{ end }}
 {{ $pages := (.Paginator $page_size).Pages }}
 {{ partial "pandago/content-item/page-banner.html" . }}
-<section id="main-content" class="panel">
-  <div class="container page-gutters padding-y-xl">
+<section id="main-content" class="panel {{ .Params.main_content_strip_classes }}">
+  <div class="page-gutters">
     {{ if .Title }}<h1 class="main-header">{{ .Title }}</h1>{{end}}
     {{ if .Content }}
       <div class="d-flex justify-center margin-bottom-lg">
