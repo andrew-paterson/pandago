@@ -18,8 +18,9 @@ $desktop-logo-width: auto !default;
 $desktop-logo-height: auto !default; 
 $desktop-logo-margin-left: $spacer-lg !default;
 $desktop-logo-margin-right: $spacer-lg !default;
-$desktop-logo-spacing-y: 8px !default;
-$mobile-logo-spacing-y: 8px !default;
+$logo-spacing-y: 8px !default;
+$desktop-logo-spacing-y: $logo-spacing-y !default;
+$mobile-logo-spacing-y: $logo-spacing-y !default;
 $mobile-logo-margin-left: $spacer-lg !default;
 $mobile-logo-margin-right: $spacer-lg !default;
 

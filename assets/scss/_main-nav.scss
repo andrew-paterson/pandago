@@ -172,7 +172,7 @@ nav.main ul li.active > a:hover {
 @media (max-width: $mobile-menu-threshold) {
 	.mobile-nav-toggler {
 		background-color: $mobile-main-nav-toggler-background-color;
-		width: 22px;
+		width: 22px + 2*$mobile-main-nav-toggler-side-padding;
 		height: 22px;
 		padding: 0 $mobile-main-nav-toggler-side-padding;
 		box-sizing: inherit;

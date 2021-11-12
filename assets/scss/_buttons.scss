@@ -1,4 +1,7 @@
-
+button,
+[role="button"] {
+  cursor: pointer;
+}
 .btn {
   background: $button-background-color;
   border: $button-border-width $button-border-style $button-border-color;
@@ -74,4 +77,10 @@
   }
 
   
+}
+
+button.no-styles {
+  padding: 0;
+  background: transparent;
+  border-width: 0;
 }

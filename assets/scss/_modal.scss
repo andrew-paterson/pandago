@@ -1,0 +1,60 @@
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.95);
+  z-index: 99999999999;
+  top: 0;
+  left: 0;
+  color: #fff;
+  overflow-y: auto;
+  padding-top: 2*$spacer-xl;
+  padding-bottom: $spacer-xl;
+
+  h1, h2, h3, h4, h5, h6, .body-text {
+    color: #fff;
+  }
+
+  .close-modal {
+    position: fixed;
+    top: $spacer-xl;
+    right: $spacer-xl;
+    height: $spacer-xl;
+    width: $spacer-xl;
+    svg {
+      fill: #aaa;
+    }
+    &:hover {
+      svg {
+        fill: $primary;
+      }
+    }
+    @media (max-width: 979px) {
+      top: $spacer-lg;
+      right: $spacer-lg;
+      height: $spacer-lg;
+      width: $spacer-lg
+    }
+  }
+
+  input.search-input {
+    background-color: rgba(255,255,255,0.1);
+    background-image: $search-icon;
+    background-repeat: no-repeat;
+    background-size: auto 50%;
+    background-position: $spacer-lg center;
+    border-width: 0;
+    font-size: 3em;
+    color: $primary;
+    height: auto;
+    padding: $spacer-lg;
+    padding-left: 70px + $spacer-lg;
+    margin-bottom: $spacer-xl;
+    width: 100%;
+    display: block;
+    @media (max-width: 979px) {
+      font-size: 2em;
+    }
+  }
+}
+
