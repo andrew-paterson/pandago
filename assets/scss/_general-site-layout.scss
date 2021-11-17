@@ -85,6 +85,30 @@ header {
   }
 }
 
+header .container {
+  justify-content: flex-start;
+  .logo-container {
+    flex-grow: 1;
+  }
+
+  .mobile-nav-toggler {
+    order: 40;
+  }
+
+  @media (min-width: $mobile-menu-threshold + 1) {
+    & > *:last-child {
+      margin-right: $spacer-xl;
+    }
+  
+    nav {
+      margin: 0;
+      &:last-child {
+        margin-right: $spacer-xl - $desktop-main-nav-item-padding-left-right;
+      }
+    }
+  }
+}
+
 @media (max-width: 979px) {
   .desktop-nav {
     display: none;
@@ -262,7 +286,7 @@ div.section-content {
   }
 
   .logo-container {
-    margin-right: $spacer-xl;
+    margin-right: $spacer-lg;
   }
 }
 

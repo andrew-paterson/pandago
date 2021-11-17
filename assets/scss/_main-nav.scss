@@ -41,12 +41,15 @@ nav.main ul li.active > a:hover {
 	nav.main {
 		display: flex;
 		justify-content: flex-end;
-    margin-right: $spacer-xl - $desktop-main-nav-item-padding-left-right;
     .nav-ul-container {
       height: auto !important;
     }
     
 	}
+
+  nav.main + .btn {
+    margin-left: $desktop-main-nav-item-padding-left-right;
+  }
 
 	nav.main ul.menu {
 		display: flex;
