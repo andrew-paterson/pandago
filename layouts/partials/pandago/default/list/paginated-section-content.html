@@ -1,0 +1,28 @@
+{{ $page_size := 20 }}
+{{ if .Params.page_size }}
+  {{ $page_size = .Params.page_size }}
+{{ end }}
+{{ $pages := (.Paginator $page_size).Pages }}
+<div class="section-content">
+  {{ if gt (len $pages) 0}}
+    <div class="main-block">
+      <div class="content-list">
+        {{ if .Params.sort_by }}
+          {{ $pages = ((.Paginator $page_size).Pages.ByParam .Params.sort_by)}}
+        {{ end }}
+        {{ if .Params.reverse_order }}
+          {{ $pages = $pages.Reverse}}
+        {{ end }}
+        {{ range $pages }}
+          {{ .Render "list_item" }}
+        {{ end }}
+      </div>
+      <div class="pagination-links">
+        {{ template "_internal/pagination.html" . }}
+      </div>
+    </div>
+    {{ partial "pandago/default/sidebar-partials.html" . }}
+  {{ else }}
+    <div class="body-text">There are no entries in {{ .Title }} yet.</div>
+  {{ end }}
+</div>

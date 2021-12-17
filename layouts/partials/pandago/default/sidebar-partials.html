@@ -1,0 +1,10 @@
+{{ if .Params.sidebar_partials }}
+  <div class=" sidebar-outer hide-below-979px">
+    <div class="sidebar body-text">
+      {{ $page_context := . }}
+      {{ range .Params.sidebar_partials }}
+        {{ partial . $page_context}}
+      {{ end }}
+    </div>
+  </div>
+{{ end }}

@@ -1,52 +1,10 @@
 {{ define "main" }}
-{{ $page_size := 20 }}
-{{ if .Params.page_size }}
-  {{ $page_size = .Params.page_size }}
-{{ end }}
-{{ $pages := (.Paginator $page_size).Pages }}
 {{ partial "pandago/content-item/page-banner.html" . }}
 <section id="main-content" class="panel {{ .Params.main_content_strip_classes }}">
   <div class="page-gutters">
     {{ if .Title }}<h1 class="main-header">{{ .Title }}</h1>{{end}}
-    {{ if .Content }}
-      <div class="d-flex justify-center margin-bottom-lg">
-        <div class="body-text list-page-intro">
-          {{ .Content }}
-        </div>
-      </div>
-    {{ end }}
-    <div class="section-content">
-      {{ if gt (len $pages) 0}}
-        <div class="main-block">
-          <div class="content-list">
-            {{ if .Params.sort_by }}
-              {{ $pages = ((.Paginator $page_size).Pages.ByParam .Params.sort_by)}}
-            {{ end }}
-            {{ if .Params.reverse_order }}
-              {{ $pages = $pages.Reverse}}
-            {{ end }}
-            {{ range $pages }}
-              {{ .Render "list_item" }}
-            {{ end }}
-          </div>
-          <div class="pagination-links">
-            {{ template "_internal/pagination.html" . }}
-          </div>
-        </div>
-        {{ if .Params.sidebar_partials }}
-          <div class=" sidebar-outer hide-below-979px">
-            <div class="sidebar body-text">
-              {{ $page_context := . }}
-              {{ range .Params.sidebar_partials }}
-                {{ partial . $page_context}}
-              {{ end }}
-            </div>
-          </div>
-        {{ end }}
-      {{ else }}
-        <div class="body-text">There are no entries in {{ .Title }} yet.</div>
-      {{ end }}
-    </div>
+    {{ partial "pandago/default/list/list-page-intro-text.html" . }}
+    {{ partial "pandago/default/list/paginated-section-content.html" . }}
   </div>
 </section>
 {{ end }}

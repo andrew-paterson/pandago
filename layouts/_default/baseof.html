@@ -5,11 +5,12 @@
     {{ partial "stylesheets.html" . }}
     {{ partial "head-append.html" . }}
   </head>
-  <body class="{{ .Site.Params.body_classes }} {{ .Params.pageclass }} ">
+  <body class="{{ .Site.Params.body_classes }} {{ .Params.pageclass }} {{ if .IsHome }} home {{ end }}">
     {{ partial "body-prepend.html" . }}
     <div id="wrapper">
       <div class='panels'>
         {{ partial "pandago/header.html" . }}
+        {{ partial "after-header.html" . }}
         {{ block "main" . }}{{ end }}
         {{ partial "panels-append.html" . }}
       </div>

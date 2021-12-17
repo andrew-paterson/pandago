@@ -2,25 +2,8 @@
 {{ partial "pandago/content-item/page-banner.html" . }}
 <section id="main-content" class="panel {{ .Params.main_content_strip_classes }}">
   <div class="content-max-width page-gutters d-flex direction-column align-center">
-    {{if .Title}}<h1 class="main-header">{{ .Title }}</h1>{{end}}
-    <div class="d-flex justify-center margin-bottom-lg width-100">
-      <div class="main-block">
-        <div class="body-text">
-          {{ .Content }}
-          <div class="clear"></div>
-        </div>
-      </div>
-      {{ if .Params.sidebar_partials }}
-        <div class=" sidebar-outer hide-below-979px">
-          <div class="sidebar body-text">
-            {{ $page_context := . }}
-            {{ range .Params.sidebar_partials }}
-              {{ partial . $page_context}}
-            {{ end }}
-          </div>
-        </div>
-      {{ end }}
-    </div>
-</div>
+    {{ if .Title }}<h1 class="main-header">{{ .Title }}</h1>{{end}}
+    {{ partial "pandago/default/single/single-page-content.html" . }}
+  </div>
 </section>
 {{ end }}

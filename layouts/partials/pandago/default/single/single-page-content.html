@@ -1,0 +1,11 @@
+<div class="d-flex justify-center width-100">
+  <div class="main-block body-text">
+    {{if .Params.intro_text }}
+      <div class="byline">
+        {{ .Params.intro_text }}
+      </div>
+    {{ end }}
+    {{ .Content }}
+  </div>
+{{ partial "pandago/default/sidebar-partials.html" . }}
+</div>

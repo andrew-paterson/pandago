@@ -21,8 +21,9 @@
 {{ if $page_banner_for_large_screens }}
   <section id="panorama">
     <picture>
-      {{ partial "hugo-sundries/responsive-source-element.html" (dict "context" . "image_path" $page_banner_for_large_screens "media" "(min-width: 600px)" "element" "source")}}
-      {{ partial "hugo-sundries/responsive-source-element.html" (dict "context" . "image_path" $page_banner_for_small_screens "media" "(max-width: 599px)" "element" "source")}}
+      {{ partial "hugo-sundries/responsive-source-element.html" (dict "context" . "image_path" $page_banner_for_small_screens "media" "(orientation: portrait)" "element" "source")}}
+      {{ partial "hugo-sundries/responsive-source-element.html" (dict "context" . "image_path" $page_banner_for_large_screens "media" "(orientation: landscape)" "element" "source")}}
+ 
       <img src="{{ $page_banner_for_large_screens }}">
     </picture>
   </section>
