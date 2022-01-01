@@ -137,6 +137,12 @@ ul.bordered {
   }
 }
 
+.list-style-none, .body-text .list-style-none {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
 .body-text, a .body-text {
 	line-height: $body-text-line-height;
 	color: $body-text-color;

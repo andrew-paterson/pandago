@@ -33,6 +33,12 @@ $spacers: (
   }
 }
 
+@each $key, $value in $spacers {
+  .width-#{$key} {
+    width: #{$value}
+  }
+}
+
 .margin-0 {
   margin: 0;
 }
