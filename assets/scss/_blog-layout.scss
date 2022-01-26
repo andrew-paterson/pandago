@@ -2,7 +2,7 @@
 
 
 
-.blog-layout img.item-thumbnail {
+.blog-layout img.item-thumbnail   {
 	width: 100%;
 	max-width: $blog-item-image-block-max-width;
 	margin: $blog-item-image-margin-top $blog-item-image-margin-right $blog-item-image-margin-bottom 0;
@@ -17,7 +17,10 @@
 .blog-layout .content-list-item {
   clear: both;
   &:not(:first-child) {
-    border-top: $blog-item-border-bottom-width $blog-item-border-bottom-style $blog-item-border-bottom-color;
+    @if $blog-item-border-bottom {
+      border-top: $blog-item-border-bottom-width $blog-item-border-bottom-style $blog-item-border-bottom-color;
+      
+    }
   }
 	&:not(:first-child) {
     padding-top: $blog-item-padding-top;
@@ -78,10 +81,9 @@
 	max-width: $blog-item-image-block-max-width;
 }
 
-$taxonomy-list-font-size: 0.8*$body-text-font-size;
-
 .taxonomy-list {
   font-size: $taxonomy-list-font-size;
+  margin-bottom: $spacer-lg;
   ul {
     display: flex;
     
@@ -89,9 +91,16 @@ $taxonomy-list-font-size: 0.8*$body-text-font-size;
       list-style: none;
       margin-right: $spacer-lg;
       &.list-header {
-        font-weight: 600;
         margin-left: 0;
         padding-left: 0;
+        margin-right: $spacer-md;
+        color: $taxonomy-list-header-color;
+      }
+      a {
+        text-decoration: $taxonomy-list-link-text-decoration;
+        &:hover {
+          text-decoration: $taxonomy-list-link-hover-text-decoration;
+        }
       }
     }
   }

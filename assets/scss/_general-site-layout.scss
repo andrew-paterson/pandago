@@ -95,7 +95,7 @@ header .container {
     order: 40;
   }
 
-  @media (min-width: $mobile-menu-threshold + 1) {
+  @media (min-width: #{$mobile-menu-threshold + 1}) {
     & > *:last-child {
       margin-right: $spacer-xl;
     }

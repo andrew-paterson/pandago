@@ -1,3 +1,4 @@
+$blog-item-border-bottom: true !default;
 $blog-item-border-bottom-width: 1px !default;
 $blog-item-border-bottom-color: #ddd !default;
 $blog-item-border-bottom-style: solid !default;
@@ -35,3 +36,8 @@ $item-read-more-color: $link-color !default;
 $item-read-more-background-color: transparent !default;
 $item-read-more-hover-color: $link-hover-color !default;
 $item-read-more-hover-background-color: transparent !default;
+
+$taxonomy-list-header-color: $item-date-created-color !default;
+$taxonomy-list-font-size: $body-text-font-size !default;
+$taxonomy-list-link-text-decoration: none !default;
+$taxonomy-list-link-hover-text-decoration: underline !default;
