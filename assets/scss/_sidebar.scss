@@ -7,9 +7,20 @@
 	box-sizing: border-box;
   flex-shrink: 0;
   
-  
   & > *:not(:last-child) {
     margin-bottom: $spacer-xl;
+  }
+
+  .section-menu li {
+    display: flex;
+    align-items: flex-start;
+    font-size: 1.3em;
+    img {
+      max-width: 80px;
+      height: 80px;
+      object-fit: cover;
+      margin-right: $spacer-md;
+    }
   }
 }
 
