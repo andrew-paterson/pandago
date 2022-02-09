@@ -1,27 +1,42 @@
 .next-prev-links {
-  display: flex;
-  clear: both;
-  justify-content: space-between;
-  margin-top: $next-prev-links-margin-top;
-  margin-bottom: $next-prev-links-margin-bottom;
-  border-top: 1px solid #ccc;
-  padding-top: $next-prev-links-padding-top;
-  font-style: $next-prev-links-text-font-style;
-  font-size: $next-prev-links-font-size;
-  .body-text & {
-    font-size: #{$next-prev-links-font-size/$body-text-font-size}em;
+  @media (max-width: 670px) {
+    flex-wrap: wrap;
+    flex-direction: column;
   }
-}
-
-.next-prev-links a {
-  text-align: $next-prev-links-text-align;
-  text-transform: $next-prev-links-text-text-transform;
-  color: $next-prev-links-text-color;
-  font-style: $next-prev-links-text-font-style;
-  font-size: 1em;
-  text-decoration: none;
-}
-
-.next-prev-links a:hover {
-  text-decoration: none;
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &:first-child {
+      align-self: flex-start;
+      padding-right: $spacer-lg;
+      @media (max-width: 670px) {
+        padding-bottom: $spacer-xl;
+      }
+    }
+    &:last-child {
+      align-self: flex-end;
+      padding-left: $spacer-lg;
+      text-align: right;
+    }
+  }
+  .next-prev-arrows {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: #fff;
+    font-weight: #666;
+    flex-shrink: 0;
+    text-decoration: none;
+    color: #222;
+    &:first-child {
+      margin-right: $spacer-md;
+    }
+    &:last-child {
+      margin-left: $spacer-md;
+    }
+  }
 }
