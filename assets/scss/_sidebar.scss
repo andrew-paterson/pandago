@@ -10,29 +10,6 @@
   & > *:not(:last-child) {
     margin-bottom: $spacer-xl;
   }
-
-  .section-menu {
-    max-height: 430px;
-    overflow-y: scroll;
-    li {
-      display: flex;
-      align-items: flex-start;
-      img {
-        width: 60px;
-        height: 60px;
-        object-fit: cover;
-        margin: $spacer-sm $spacer-md 0 0;
-        flex-shrink: 0;
-      }
-      a {
-        font-size: #{1.3em/$body-text-font-size}em;
-        line-height: 110%;
-      }
-      .publish-date {
-        font-size: #{1.1em/$body-text-font-size}em;
-      }
-    }
-  }
 }
 
 @media (min-width: 980px) {
