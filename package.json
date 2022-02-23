@@ -1,6 +1,6 @@
 {
   "name": "pandago",
-  "version": "v1.0.58",
+  "version": "v1.0.59",
   "description": "In the consuming app, add the following in your config file.",
   "main": "create-release.js",
   "scripts": {
