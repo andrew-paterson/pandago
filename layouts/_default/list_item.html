@@ -1,13 +1,1 @@
-<div class="content-list-item">
-  {{ $sizes := (partial "hugo-sundries/fallback-srcset-sizes.html" (dict "context" . "type" "list_item" ))}}
-  {{ partial "pandago/content-item/cover-image.html" (dict "context" . "image_link" .RelPermalink "image_link_class" "thumbnail-link" "class" "item-thumbnail" "sizes" $sizes) }}
-  <h2 class="item-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-
-  {{ partial "pandago/content-item/publish-date.html" . }}
-  {{ partial "pandago/content-item/categories.html" . }}
-  {{ partial "pandago/content-item/tags.html" . }}
-  <div class="body-text">
-    {{ partial "pandago/content-item/summary.html" . }}
-    <a  class="read-more" href="{{ .RelPermalink }}">Read more</a>
-  </div>
-</div>
+{{ partial "pandago/default/list/list-item" . }}
