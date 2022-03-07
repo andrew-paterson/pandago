@@ -115,6 +115,9 @@ $search-input-hover-icon-fill: $primary;
       color: $link-color;
       text-decoration: underline;
     }
+    .search-result-snippet {
+      overflow-wrap: break-word;
+    }
     
   }
 

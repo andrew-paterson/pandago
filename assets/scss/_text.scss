@@ -149,6 +149,8 @@ ul.bordered {
 	font-family: $body-text-font-family;
 	font-size: $body-text-font-size;
 	font-weight: $body-text-font-weight;
+  overflow-wrap: break-word;
+  min-width: 0;
 	.body-text {
 		font-size: 1em;
 	}
