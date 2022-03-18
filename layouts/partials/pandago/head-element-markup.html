@@ -1,10 +1,10 @@
-{{ $page_title := ""}}
-{{ if .Params.page_title }}
-  {{ $page_title = .Params.page_title}}
+{{ $meta_title := ""}}
+{{ if .Params.meta_title }}
+  {{ $meta_title = .Params.meta_title}}
 {{ else if (or (eq .Site.Title .Title) (not .Title) (.IsHome)) }}
-  {{ $page_title = .Site.Title}}
+  {{ $meta_title = .Site.Title}}
 {{ else }}
-  {{ $page_title = (print .Title " | " .Site.Title )}}
+  {{ $meta_title = (print .Title " | " .Site.Title )}}
 {{ end }}
 
 {{ $open_graph_image := .Site.Params.default_open_graph_image }}
@@ -27,8 +27,8 @@
 <meta property="og:description" content="{{ .Params.meta_description }}">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="{{ $page_title }}">
-<title>{{$page_title}}</title>
+<meta property="og:title" content="{{ $meta_title }}">
+<title>{{$meta_title}}</title>
 <link href="/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
