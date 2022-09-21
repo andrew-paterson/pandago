@@ -1,0 +1,3 @@
+{{ if isset .Site.Params "ga_tracking_id"}}
+  {{ partial "hyrax-hugo-assets/google-analytics-tracking-code.html" (dict "context" . "tracking_id" .Site.Params.ga_tracking_id "allowed_hosts" .allowed_hosts) }}
+{{ end  }}
