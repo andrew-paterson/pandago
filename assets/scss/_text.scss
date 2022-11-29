@@ -12,6 +12,11 @@ h1, h2, h3, h4, h5, h6, a h1, a h2, a h3, a h4, a h5, a h6 {
 	padding: 0;
 	background-color: transparent;
 	margin-top: 0;
+  @if $body-text-header-font-style {
+    &:not(.main-header) {
+      font-style: $body-text-header-font-style;
+    }
+  }
 }
 
 h2 {
@@ -33,7 +38,6 @@ h4 {
 		font-size: #{$body-text-header-h4-font-size/$body-text-font-size}em;
 	}
 }
-
 
 a {
 	color: $link-color;
@@ -81,6 +85,9 @@ a.external-icon:after {
 	text-align: $main-header-text-align;
 	font-family: $main-header-font-family;
 	font-weight: $main-header-font-weight;
+  @if $main-header-font-style {
+    font-style: $main-header-font-style;
+  }
 	margin-top: $main-header-margin-top;
 	margin-bottom: $main-header-margin-bottom;
 	.body-text & {

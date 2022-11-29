@@ -192,6 +192,9 @@ footer {
   padding: $spacer-lg;
 
   .footer-item {
+    a {
+      font-weight: inherit;
+    }
     margin: 0 $spacer-md;
     display: flex;
     align-items: center;
