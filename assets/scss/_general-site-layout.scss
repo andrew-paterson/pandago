@@ -23,7 +23,7 @@ body {
 
 @media (max-width: 480px) {
   body {
-    font-size: 56%;
+    font-size: $body-font-size-factor-480px;
   }
 }
 
@@ -66,6 +66,18 @@ section {
 .page-gutters {
   padding-left: $pc-page-gutter-left-right;
   padding-right: $pc-page-gutter-left-right;
+}
+.page-gutter-right {
+  padding-right: $pc-page-gutter-left-right;
+}
+.page-gutter-left {
+  padding-left: $pc-page-gutter-left-right;
+}
+.page-gutter-top {
+  padding-top: $pc-page-gutter-left-right;
+}
+.page-gutter-bottom {
+  padding-bottom: $pc-page-gutter-left-right;
 }
 
 header {
@@ -285,6 +297,18 @@ div.section-content {
   .page-gutters {
     padding-left: 3%;
     padding-right: 3%;
+  }
+  .page-gutter-left {
+    padding-left: 3%;
+  }
+  .page-gutter-right {
+    padding-right: 3%;
+  }
+  .page-gutter-top {
+    padding-top: 3%;
+  }
+  .page-gutter-bottom {
+    padding-bottom: 3%;
   }
 
   .logo-container {
