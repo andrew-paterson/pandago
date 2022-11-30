@@ -85,17 +85,18 @@ header {
     position: fixed;
     top: 0;
     z-index: 999;
-    @media (max-width: 979px) {
-      #wrapper {
-        padding-top: $mobile-header-height-calculated;
-      }
-      nav {
-        position: fixed;
-        overflow-y: auto;
-        top: $mobile-header-height-calculated;
-        max-height: calc(100vh - #{$mobile-header-height-calculated});
-        transition: $dynamic-header-transition
-      }
+   
+  }
+  @media (max-width: 979px) {
+    #wrapper {
+      padding-top: $mobile-header-height-calculated;
+    }
+    header nav {
+      position: fixed;
+      overflow-y: auto;
+      top: $mobile-header-height-calculated;
+      max-height: calc(100vh - #{$mobile-header-height-calculated});
+      transition: $dynamic-header-transition
     }
   }
   &:not(.scrolled) {
