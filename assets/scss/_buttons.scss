@@ -2,7 +2,7 @@ button,
 [role="button"] {
   cursor: pointer;
 }
-.btn {
+.btn, .jf-form-buttons {
   background: $button-background-color;
   border: $button-border-width $button-border-style $button-border-color;
   border-radius: $button-border-radius;
