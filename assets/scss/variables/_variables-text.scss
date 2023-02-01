@@ -10,6 +10,7 @@ $main-header-font-weight: 600 !default;
 $main-header-margin-bottom: $spacer-xl !default;
 $main-header-margin-top: 0 !default;
 $main-header-xl-font-size: 7em;
+$main-header-font-style: null;
 
 $body-text-font-family: $main-font-family !default;
 $body-text-font-size: 1.6em !default;
@@ -21,6 +22,7 @@ $body-text-header-color: #666 !default;
 $body-text-header-text-transform: none !default;
 $body-text-header-font-family: $body-text-font-family !default;
 $body-text-header-font-weight: 600 !default;
+$body-text-header-font-style: null;
 
 $body-text-header-margin-bottom: 0.5em !default;
 $body-text-header-h2-font-size: 2.4em !default;
