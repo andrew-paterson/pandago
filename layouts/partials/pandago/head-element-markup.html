@@ -30,6 +30,6 @@
 <meta property="og:title" content="{{ $meta_title }}">
 <title>{{$meta_title}}</title>
 <link href="/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
-<!--[if lt IE 9]>
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
+{{ if isset .Site.Params "ga_tracking_id"}}
+  {{ partial "hugo-sundries/google-analytics-tracking-code.html" (dict "context" . "tracking_id" .Site.Params.ga_tracking_id "allowed_hosts" .Site.Params.ga_allowed_hosts) }}
+{{ end  }}

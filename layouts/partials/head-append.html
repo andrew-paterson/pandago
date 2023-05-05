@@ -1,3 +1,0 @@
-{{ if isset .Site.Params "ga_tracking_id"}}
-  {{ partial "hugo-sundries/google-analytics-tracking-code.html" (dict "context" . "tracking_id" .Site.Params.ga_tracking_id "allowed_hosts" .Site.Params.ga_allowed_hosts) }}
-{{ end  }}
