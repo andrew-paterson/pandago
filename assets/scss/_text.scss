@@ -1,17 +1,28 @@
 body {
-	font-family: $main-font-family;
+  font-family: $main-font-family;
 }
 
-h1, h2, h3, h4, h5, h6, a h1, a h2, a h3, a h4, a h5, a h6 {
-	color: $body-text-header-color;
-	text-transform: $body-text-header-text-transform;
-	font-family: $body-text-header-font-family;
-	font-weight: $body-text-header-font-weight;
-	margin-bottom: $body-text-header-margin-bottom;
-	line-height: 150%;
-	padding: 0;
-	background-color: transparent;
-	margin-top: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a h1,
+a h2,
+a h3,
+a h4,
+a h5,
+a h6 {
+  color: $body-text-header-color;
+  text-transform: $body-text-header-text-transform;
+  font-family: $body-text-header-font-family;
+  font-weight: $body-text-header-font-weight;
+  margin-bottom: $body-text-header-margin-bottom;
+  line-height: 150%;
+  padding: 0;
+  background-color: transparent;
+  margin-top: 0;
   @if $body-text-header-font-style {
     &:not(.main-header) {
       font-style: $body-text-header-font-style;
@@ -20,38 +31,43 @@ h1, h2, h3, h4, h5, h6, a h1, a h2, a h3, a h4, a h5, a h6 {
 }
 
 h2 {
-	font-size: $body-text-header-h2-font-size;
-	.body-text & {
-		font-size: #{$body-text-header-h2-font-size/$body-text-font-size}em;
-	}
+  font-size: $body-text-header-h2-font-size;
+  .body-text & {
+    font-size: #{$body-text-header-h2-font-size/$body-text-font-size}em;
+  }
 }
 
 h3 {
-	font-size: $body-text-header-h3-font-size;
-	.body-text & {
-		font-size: #{$body-text-header-h3-font-size/$body-text-font-size}em;
-	}
+  font-size: $body-text-header-h3-font-size;
+  .body-text & {
+    font-size: #{$body-text-header-h3-font-size/$body-text-font-size}em;
+  }
 }
 h4 {
-	font-size: $body-text-header-h4-font-size;
-	.body-text & {
-		font-size: #{$body-text-header-h4-font-size/$body-text-font-size}em;
-	}
+  font-size: $body-text-header-h4-font-size;
+  .body-text & {
+    font-size: #{$body-text-header-h4-font-size/$body-text-font-size}em;
+  }
 }
 
 a {
-	color: $link-color;
-	text-decoration: $link-text-decoration;
-	font-weight: $link-font-weight; 
+  color: $link-color;
+  text-decoration: $link-text-decoration;
+  font-weight: $link-font-weight;
   .body-text & {
     overflow-wrap: break-word;
     word-wrap: break-word;
   }
-  
-	.dark-bg & {
-		color: #fff;
+
+  .dark-bg & {
+    color: #fff;
   }
-  h1 &, h2 &, h3 &, h4 &, h5 &, h6 & {
+  h1 &,
+  h2 &,
+  h3 &,
+  h4 &,
+  h5 &,
+  h6 & {
     color: inherit;
     text-decoration: inherit;
     font-weight: inherit;
@@ -59,16 +75,16 @@ a {
 }
 
 a:hover {
-	color: $link-hover-color;
-	text-decoration: $link-hover-text-decoration;
-	.dark-bg & {
-		color: #bbb;
+  color: $link-hover-color;
+  text-decoration: $link-hover-text-decoration;
+  .dark-bg & {
+    color: #bbb;
   }
 }
 
 a:active {
-	color: $link-color;
-	text-decoration: $link-text-decoration;
+  color: $link-color;
+  text-decoration: $link-text-decoration;
 }
 
 a.external-icon:after {
@@ -79,32 +95,32 @@ a.external-icon:after {
 }
 
 .main-header {
-	color: $main-header-color;
-	font-size: $main-header-font-size;
-	text-transform: $main-header-text-transform;
-	text-align: $main-header-text-align;
-	font-family: $main-header-font-family;
-	font-weight: $main-header-font-weight;
+  color: $main-header-color;
+  font-size: $main-header-font-size;
+  text-transform: $main-header-text-transform;
+  text-align: $main-header-text-align;
+  font-family: $main-header-font-family;
+  font-weight: $main-header-font-weight;
   @if $main-header-font-style {
     font-style: $main-header-font-style;
   }
-	margin-top: $main-header-margin-top;
-	margin-bottom: $main-header-margin-bottom;
-	.body-text & {
-		font-size: #{$main-header-font-size/$body-text-font-size}em;
-	}
-	&.main-header-xl {
-		font-size: $main-header-xl-font-size;
-		.body-text & {
-			font-size: #{$main-header-xl-font-size/$body-text-font-size}em;
-		}
-		@media (max-width: 479px) {
-			font-size: 0.7*$main-header-xl-font-size;
-			.body-text & {
-				font-size: #{$main-header-xl-font-size/$body-text-font-size}em;
-			}
-		}
-	}
+  margin-top: $main-header-margin-top;
+  margin-bottom: $main-header-margin-bottom;
+  .body-text & {
+    font-size: #{$main-header-font-size/$body-text-font-size}em;
+  }
+  &.main-header-xl {
+    font-size: $main-header-xl-font-size;
+    .body-text & {
+      font-size: #{$main-header-xl-font-size/$body-text-font-size}em;
+    }
+    @media (max-width: 479px) {
+      font-size: 0.7 * $main-header-xl-font-size;
+      .body-text & {
+        font-size: #{$main-header-xl-font-size/$body-text-font-size}em;
+      }
+    }
+  }
 }
 
 .print-header {
@@ -115,15 +131,16 @@ a.external-icon:after {
 }
 
 .dark-bg {
-	@include dark-bg-elements;
+  @include dark-bg-elements;
 }
 
-ul, ol {
+ul,
+ol {
   margin: 0;
   padding: 0;
   .body-text & {
     margin: 0 0 $body-text-paragraph-space-after $spacer-lg;
-	  padding: 0 0 0 $spacer-lg;
+    padding: 0 0 0 $spacer-lg;
   }
 }
 
@@ -144,28 +161,30 @@ ul.bordered {
   }
 }
 
-.list-style-none, .body-text .list-style-none {
+.list-style-none,
+.body-text .list-style-none {
   list-style: none;
   padding-left: 0;
   margin-left: 0;
 }
 
-.body-text, a .body-text {
-	line-height: $body-text-line-height;
-	color: $body-text-color;
-	font-family: $body-text-font-family;
-	font-size: $body-text-font-size;
-	font-weight: $body-text-font-weight;
+.body-text,
+a .body-text {
+  line-height: $body-text-line-height;
+  color: $body-text-color;
+  font-family: $body-text-font-family;
+  font-size: $body-text-font-size;
+  font-weight: $body-text-font-weight;
   overflow-wrap: break-word;
   min-width: 0;
-	.body-text {
-		font-size: 1em;
-	}
+  .body-text {
+    font-size: 1em;
+  }
 }
 .body-text p {
-	line-height: $body-text-paragraph-line-height;
-	margin-bottom: $body-text-paragraph-space-after;
-	margin-top: 0;
+  line-height: $body-text-paragraph-line-height;
+  margin-bottom: $body-text-paragraph-space-after;
+  margin-top: 0;
 }
 
 .body-text-paragraph-space-after {
@@ -177,52 +196,53 @@ ul.bordered {
 }
 
 .large-text {
-	font-size: $large-text-font-size;
-	line-height: 140%;
-	.body-text & {
-		font-size: #{$large-text-font-size/$body-text-font-size}em;
-	}
+  font-size: $large-text-font-size;
+  line-height: 140%;
+  .body-text & {
+    font-size: #{$large-text-font-size/$body-text-font-size}em;
+  }
 }
 
 .text-smaller {
-	font-size: 0.9em;
+  font-size: 0.9em;
   &.body-text {
-		font-size: 0.9*$body-text-font-size;
-	}
+    font-size: 0.9 * $body-text-font-size;
+  }
 }
 
 .text-align-left {
-	text-align: left;
+  text-align: left;
 }
 
-.text-align-center, .body-text.text-align-center p {
-	text-align: center;
+.text-align-center,
+.body-text.text-align-center p {
+  text-align: center;
 }
 
 .text-align-right {
-	text-align: center;
+  text-align: center;
 }
 
 @media (min-width: 480px) {
   .body-text p {
-		text-align: $main-content-body-text-paragraph-text-align;
-	}
+    text-align: $main-content-body-text-paragraph-text-align;
+  }
 }
 
 .body-text p:last-child {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 blockquote {
-	margin: 0;
+  margin: 0;
 }
 
 blockquote p {
-	font-family: $blockquote-font-family;
-	font-weight: $blockquote-font-weight;
-	font-style: $blockquote-font-style;
-	color: $blockquote-color;
-	margin-bottom: 0;
+  font-family: $blockquote-font-family;
+  font-weight: $blockquote-font-weight;
+  font-style: $blockquote-font-style;
+  color: $blockquote-color;
+  margin-bottom: 0;
 }
 
 blockquote {
@@ -247,7 +267,8 @@ blockquote:before {
   color: #666;
   text-align: center;
 }
-blockquote cite, blockquote:after {
+blockquote cite,
+blockquote:after {
   display: block;
   text-align: right;
   font-size: 0.875em;
@@ -255,14 +276,14 @@ blockquote cite, blockquote:after {
 }
 
 blockquote:after {
-	content: attr(cite);
+  content: attr(cite);
 }
 
 hr {
-	display: block;
-	height: 1px;
-	border: 0;
-	border-top: $hr-thickness solid $hr-color;
-	margin: 1em 0;
-	padding: 0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: $hr-thickness solid $hr-color;
+  margin: 1em 0;
+  padding: 0;
 }
