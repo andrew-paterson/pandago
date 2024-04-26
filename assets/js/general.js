@@ -45,7 +45,11 @@ var links = document.querySelectorAll('a');
 var i;
 for (i = 0; i < links.length; i++) {
   var link = links[i];
-  if (link.hostname !== window.location.hostname) {
+  if (link.getAttribute('href').startsWith('#')) {
+    console.log(`${window.location.href.split('#')[0]}${link.getAttribute('href')}`)
+    link.setAttribute('data-accordion-link', '')
+  }
+  if (link.hostname !== window.location.hostname && !link.getAttribute('href').startsWith('#')) {
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
   }
