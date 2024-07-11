@@ -1,22 +1,21 @@
 .sidebar {
-	width: 100%;
-	max-width: $entry-content-max-width;
-	padding: $sidebar-box-padding-y $sidebar-box-padding-x;
-	background: $sidebar-box-background;
-	border: $sidebar-box-border-width $sidebar-box-border-style $sidebar-box-border-color;
-	box-sizing: border-box;
+  width: 100%;
+  max-width: $entry-content-max-width;
+  padding: $sidebar-box-padding-y $sidebar-box-padding-x;
+  background: $sidebar-box-background;
+  border: $sidebar-box-border-width $sidebar-box-border-style $sidebar-box-border-color;
+  box-sizing: border-box;
   flex-shrink: 0;
-  
+
   & > *:not(:last-child) {
     margin-bottom: $spacer-xl;
   }
 }
 
-@media (min-width: 980px) {
-	.sidebar {
-		width: $desktop-sidebar-width;
-		margin-left: $spacer-xl;
-		flex-shrink: 0;
-	}
+@media (min-width: #{$mobile-menu-threshold + 1}) {
+  .sidebar {
+    width: $desktop-sidebar-width;
+    margin-left: $spacer-xl;
+    flex-shrink: 0;
+  }
 }
-

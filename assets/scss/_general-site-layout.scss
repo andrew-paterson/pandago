@@ -34,9 +34,7 @@ body {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
-
 }
-
 
 .panels {
   flex-grow: 1;
@@ -104,6 +102,9 @@ header .container {
   justify-content: flex-start;
   .logo-container {
     flex-grow: 1;
+    a.logo {
+      text-decoration: none;
+    }
   }
 
   .mobile-nav-toggler {
@@ -114,7 +115,7 @@ header .container {
     & > *:last-child {
       margin-right: $spacer-xl;
     }
-  
+
     nav {
       margin: 0;
       &:last-child {
@@ -124,13 +125,13 @@ header .container {
   }
 }
 
-@media (max-width: 979px) {
+@media (max-width: $mobile-menu-threshold) {
   .desktop-nav {
     display: none;
   }
 }
 
-@media (min-width: 980px) {
+@media (min-width:  #{$mobile-menu-threshold + 1}) {
   header {
     .mobile-nav {
       display: none;
@@ -143,7 +144,6 @@ header .container {
   }
 }
 
-
 .logo-container {
   padding-top: $mobile-logo-spacing-y;
   padding-bottom: $mobile-logo-spacing-y;
@@ -155,8 +155,7 @@ header .container {
   }
 }
 
-
-@media (min-width: 980px) {
+@media (min-width: #{$mobile-menu-threshold + 1}) {
   .logo-container {
     margin-left: $desktop-logo-margin-left;
     margin-right: $desktop-logo-margin-right;
@@ -165,7 +164,7 @@ header .container {
 
     img {
       width: $desktop-logo-width;
-      height: $desktop-logo-height - 2*$desktop-logo-spacing-y;
+      height: $desktop-logo-height - 2 * $desktop-logo-spacing-y;
     }
   }
 }
@@ -183,7 +182,7 @@ header .container {
   }
 }
 
-@media (max-width: 979px) {
+@media (max-width: $mobile-menu-threshold) {
   .banner {
     display: $mobile-banner-display;
   }
@@ -246,7 +245,7 @@ div.buttons-png-loader {
   height: 0;
   width: 0;
   opacity: 0;
-  background-image: url("images/buttons.png");
+  background-image: url('images/buttons.png');
 }
 
 body.custom-error-page div#main-content .container-2 {
@@ -360,11 +359,9 @@ div.section-content {
   flex-grow: 0;
 }
 
-
 .flex-grow-1 {
   flex-grow: 1;
 }
-
 
 #p404 {
   .text .byline {
@@ -409,12 +406,11 @@ div.section-content {
 }
 
 .bottom-0 {
-  bottom: 0
+  bottom: 0;
 }
 
 // IE Hacks
-@media all and (-ms-high-contrast: none),
-(-ms-high-contrast: active) {
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .panels {
     flex-shrink: 0;
 
@@ -444,7 +440,7 @@ div.section-content {
 }
 
 .object-fit-cover,
-[data-object-fit="cover"] {
+[data-object-fit='cover'] {
   object-fit: cover;
 }
 
@@ -463,13 +459,13 @@ div.section-content {
 }
 
 .height-100vh {
-  height: 100vh
+  height: 100vh;
 }
 
 .grid-layout {
   display: flex;
   flex-wrap: wrap;
-  margin: #{-1*$grid-layout-item-margin};
+  margin: #{-1 * $grid-layout-item-margin};
   .content-list-item {
     width: column-width(2);
     padding: $grid-layout-item-padding;
@@ -479,7 +475,8 @@ div.section-content {
 }
 
 #panorama {
-  picture, img {
+  picture,
+  img {
     width: 100%;
   }
 }

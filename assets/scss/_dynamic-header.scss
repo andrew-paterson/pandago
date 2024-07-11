@@ -16,7 +16,8 @@ header {
     a.logo {
       display: inline-block;
     }
-    svg, img {
+    svg,
+    img {
       // height: 100%;
       width: auto;
       transition: $dynamic-header-transition;
@@ -45,13 +46,13 @@ header {
       fill: $dynamic-header-light-text-color;
     }
 
-    nav.main ul.menu>li>a,
-    nav.main ul.menu>li>span {
+    nav.main ul.menu > li > a,
+    nav.main ul.menu > li > span {
       color: $dynamic-header-light-text-color;
     }
 
-    @media (max-width: 979px) {
-      nav.main ul.menu>li {
+    @media (max-width: $mobile-menu-threshold) {
+      nav.main ul.menu > li {
         border-width: 0;
 
         a,
@@ -73,8 +74,8 @@ header {
     .logo-container svg .st0 {
       fill: $dynamic-header-dark-text-color;
     }
-    nav.main ul.menu>li>a,
-    nav.main ul.menu>li>span {
+    nav.main ul.menu > li > a,
+    nav.main ul.menu > li > span {
       color: $dynamic-header-dark-text-color;
     }
   }
@@ -85,9 +86,8 @@ header {
     position: fixed;
     top: 0;
     z-index: 999;
-   
   }
-  @media (max-width: 979px) {
+  @media (max-width: $mobile-menu-threshold) {
     #wrapper {
       padding-top: $mobile-header-height-calculated;
     }
@@ -96,11 +96,11 @@ header {
       overflow-y: auto;
       top: $mobile-header-height-calculated;
       max-height: calc(100vh - #{$mobile-header-height-calculated});
-      transition: $dynamic-header-transition
+      transition: $dynamic-header-transition;
     }
   }
   &:not(.scrolled) {
-    @media (max-width: 979px) {
+    @media (max-width: $mobile-menu-threshold) {
       &:not(.header-overlay) #wrapper {
         padding-top: $mobile-header-initial-height-calculated;
       }
@@ -110,7 +110,7 @@ header {
       }
     }
   }
-  @media (min-width: 980px) {
+  @media (min-width: #{$mobile-menu-threshold + 1}) {
     #wrapper {
       padding-top: $desktop-header-height-calculated;
     }
@@ -127,14 +127,14 @@ header {
   }
 }
 
-
-@media(min-width: 980px) {
+@media (min-width: #{$mobile-menu-threshold + 1}) {
   header {
     height: $desktop-header-height-calculated;
     .logo-container {
       padding: $desktop-logo-spacing-y 0;
-      svg, img {
-        height: $desktop-header-height-calculated - 2*$desktop-logo-spacing-y; 
+      svg,
+      img {
+        height: $desktop-header-height-calculated - 2 * $desktop-logo-spacing-y;
       }
     }
   }
@@ -144,8 +144,9 @@ header {
       height: $desktop-header-initial-height-calculated;
       .logo-container {
         padding: $desktop-initial-logo-spacing-y 0;
-        svg, img {
-          height: $desktop-header-initial-height-calculated - 2*$desktop-initial-logo-spacing-y;  
+        svg,
+        img {
+          height: $desktop-header-initial-height-calculated - 2 * $desktop-initial-logo-spacing-y;
         }
       }
     }
@@ -157,15 +158,15 @@ header {
       top: 0;
       z-index: 9999999;
     }
-  
+
     #wrapper {
       padding-top: $desktop-header-height-calculated;
     }
-  
+
     &:not(.scrolled):not(.header-overlay) #wrapper {
       padding-top: $desktop-header-initial-height-calculated;
     }
-  
+
     &.header-overlay {
       #wrapper {
         padding-top: 0;
@@ -174,24 +175,26 @@ header {
   }
 }
 
-@media(max-width: 979px) {
+@media (max-width: $mobile-menu-threshold) {
   header {
     height: $mobile-header-height-calculated;
     .logo-container {
       padding: $mobile-logo-spacing-y 0;
-      svg, img {
-        height: $mobile-header-height-calculated - 2*$mobile-logo-spacing-y; 
+      svg,
+      img {
+        height: $mobile-header-height-calculated - 2 * $mobile-logo-spacing-y;
       }
     }
   }
 
   body:not(.scrolled) {
     header {
-    height: $mobile-header-initial-height-calculated;
+      height: $mobile-header-initial-height-calculated;
 
       .logo-container {
-        svg, img {
-          height: $mobile-header-initial-height-calculated - 2*$mobile-logo-spacing-y;  
+        svg,
+        img {
+          height: $mobile-header-initial-height-calculated - 2 * $mobile-logo-spacing-y;
         }
       }
     }
@@ -202,33 +205,33 @@ header {
       position: fixed;
       top: 0;
       z-index: 9999999;
-      @media (max-width: 979px) {
+      @media (max-width: $mobile-menu-threshold) {
         nav {
           position: fixed;
           overflow-y: auto;
           top: $mobile-header-height-calculated;
           max-height: calc(100vh - #{$mobile-header-height-calculated});
-          transition: $dynamic-header-transition
+          transition: $dynamic-header-transition;
         }
       }
     }
     &:not(.scrolled) {
-      @media (max-width: 979px) {
+      @media (max-width: $mobile-menu-threshold) {
         nav {
           top: $mobile-header-initial-height-calculated;
           max-height: calc(100vh - #{$mobile-header-initial-height-calculated});
         }
       }
     }
-  
+
     #wrapper {
       padding-top: $mobile-header-height-calculated;
     }
-  
+
     &:not(.scrolled):not(.header-overlay) #wrapper {
       padding-top: $mobile-header-initial-height-calculated;
     }
-  
+
     &.header-overlay {
       #wrapper {
         padding-top: 0;

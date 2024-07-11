@@ -1,4 +1,4 @@
-@function str-replace($string, $search, $replace: "") {
+@function str-replace($string, $search, $replace: '') {
   $index: str-index($string, $search);
 
   @if $index {
@@ -9,21 +9,22 @@
 
 @function box-shadow($shadowNames, $opacity: 0.16) {
   $map: (
-    top: 0 -3px 6px rgba(0,0,0,$opacity),
-    bottom: 0 3px 6px rgba(0,0,0,$opacity),
-		left: -4px 0 6px 0 rgba(0,0,0,$opacity),
-		right: 6px 0 4px 0 rgba(0,0,0,$opacity),
-		topInset: inset 0px 3px 5px rgba(0,0,0,$opacity),
-		leftInset: inset 10px 0px 6px -6px rgba(0,0,0,$opacity),
-		rightInset: inset -10px 0px 6px -6px rgba(0,0,0,$opacity),
-		bottomRight: 3px 3px 6px rgba(0,0,0,$opacity)
+    top: 0 -3px 6px rgba(0, 0, 0, $opacity),
+    bottom: 0 3px 6px rgba(0, 0, 0, $opacity),
+    left: -4px 0 6px 0 rgba(0, 0, 0, $opacity),
+    right: 6px 0 4px 0 rgba(0, 0, 0, $opacity),
+    topInset: inset 0px 3px 5px rgba(0, 0, 0, $opacity),
+    leftInset: inset 10px 0px 6px -6px rgba(0, 0, 0, $opacity),
+    rightInset: inset -10px 0px 6px -6px rgba(0, 0, 0, $opacity),
+    bottomRight: 3px 3px 6px rgba(0, 0, 0, $opacity),
+    bottomInset: inset 0px -3px 5px rgba(0, 0, 0, $opacity),
   );
   $shadowValues: ();
   @each $shadowName in $shadowNames {
     $shadowValue: map-get($map, $shadowName);
-    @if $shadowValue { 
+    @if $shadowValue {
       $shadowValues: append($shadowValues, $shadowValue, comma);
-    };
+    }
   }
   @return $shadowValues;
 }
@@ -32,17 +33,17 @@
   // empty array/list
   $split-arr: ();
   // first index of separator in string
-  $index : str-index($string, $separator);
+  $index: str-index($string, $separator);
   // loop through string
   @while $index != null {
-      // get the substring from the first character to the separator
-      $item: str-slice($string, 1, $index - 1);
-      // push item to array
-      $split-arr: append($split-arr, $item);
-      // remove item and separator from string
-      $string: str-slice($string, $index + 1);
-      // find new index of separator
-      $index : str-index($string, $separator);
+    // get the substring from the first character to the separator
+    $item: str-slice($string, 1, $index - 1);
+    // push item to array
+    $split-arr: append($split-arr, $item);
+    // remove item and separator from string
+    $string: str-slice($string, $index + 1);
+    // find new index of separator
+    $index: str-index($string, $separator);
   }
   // add the remaining string to list (the last item)
   $split-arr: append($split-arr, $string);
