@@ -36,7 +36,15 @@ body {
   scroll-behavior: smooth;
 }
 
+.panels-outer {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
 .panels {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
 }
 

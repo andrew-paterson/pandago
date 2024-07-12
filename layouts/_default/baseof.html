@@ -4,16 +4,13 @@
     {{ partial "pandago/head-element-markup.html" . }} {{ partial "stylesheets.html" . }} {{ partial "head-append.html" . }}
   </head>
   <body class="{{ .Site.Params.body_classes }} {{ .Params.pageclass }} {{ if .IsHome }} home {{ end }}">
-    {{ partial "body-prepend.html" . }}
+    {{ partial "body-prepend.html" . }} {{ partial "pandago/header.html" . }}
     <div id="wrapper">
-      <div class="panels">
-        {{ partial "pandago/header.html" . }} {{ partial "after-header.html" . }}
-        <div class="panels-inner">
-          {{ partial "before-panels.html" . }}
-          <div class="panels-inner-2">{{ block "main" . }}{{ end }} {{ partial "panels-append.html" . }}</div>
-        </div>
+      {{ partial "wrapper-prepend.html" . }}
+      <div class="panels-outer">
+        <div class="panels">{{ partial "after-header.html" . }} {{ block "main" . }}{{ end }} {{ partial "panels-append.html" . }}</div>
+        {{ partial "pre-footer.html" . }} {{ partial "pandago/footer.html" . }}
       </div>
-      {{ partial "pre-footer.html" . }} {{ partial "pandago/footer.html" . }}
     </div>
     {{ partial "body-append.html" . }}
   </body>
