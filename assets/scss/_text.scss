@@ -80,6 +80,9 @@ a:hover {
   .dark-bg & {
     color: #bbb;
   }
+  @if variable-exists(link-hover-font-weight) and $link-hover-font-weight != null {
+    font-weight: $link-hover-font-weight;
+  }
 }
 
 a:active {
