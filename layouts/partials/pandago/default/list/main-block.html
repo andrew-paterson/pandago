@@ -22,9 +22,7 @@
       {{ range
         $pages
       }}
-        {{ partial "pandago/default/list/list-item.html" (dict "page" .
-          "context" $context)
-        }}
+        {{ .Render "list_item" }}
       {{ end }}
     </div>
     <div class="pagination-links">
