@@ -1,3 +1,5 @@
 {{ if .Params.publishdate }}
-  <div class='item-date'>{{dateFormat "Monday, 2 January 2006" .Params.publishdate }}</div>
+  <div class="item-date">
+    {{ dateFormat "Monday, 2 January 2006" .Params.publishdate }}
+  </div>
 {{ end }}

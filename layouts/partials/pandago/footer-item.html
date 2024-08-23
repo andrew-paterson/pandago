@@ -1,19 +1,19 @@
 <div class="footer-item {{ .class }}">
-  {{ $url_prefix := ""}}
-  {{ if (eq .type "email")}}
-    {{ $url_prefix = "mailto:"}}
+  {{ $url_prefix := "" }}
+  {{ if (eq .type "email") }}
+    {{ $url_prefix = "mailto:" }}
   {{ else if (eq .type "phone") }}
-    {{ $url_prefix = "tel:"}}
+    {{ $url_prefix = "tel:" }}
   {{ end }}
   {{ $url := "" }}
   {{ if .url }}
     {{ $url = (print $url_prefix .url) }}
-  {{ else if (or (eq .type "email") (eq .type "phone"))}}
+  {{ else if (or (eq .type "email") (eq .type "phone")) }}
     {{ $url = (print $url_prefix .text) }}
   {{ end }}
-  {{ $icon := ""}}
+  {{ $icon := "" }}
   {{ if .icon }}
-    {{ $icon = (partial (path.Join "hugo-sundries/svg/brands" (print .icon ".svg")))}}
+    {{ $icon = (partial (path.Join "hugo-sundries/svg/brands" (print .icon ".svg"))) }}
   {{ end }}
   {{ if $url }}
     <a href="{{ $url | safeURL }}">{{ $icon }}{{ .text }}</a>

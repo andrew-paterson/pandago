@@ -1,7 +1,16 @@
-<section id="main-content" class="panel {{ .Params.main_content_strip_classes }}">
-  <div class="content-max-width page-gutters d-flex direction-column align-center">
-    {{ if .Title }}<h1 class="main-header main-header-xl">{{ .Title }}</h1>{{ end }}
-    {{ if .Params.tagline }}<p class="tagline">{{ .Params.tagline }}</p>{{ end }}
+<section
+  id="main-content"
+  class="panel {{ .Params.main_content_strip_classes }}"
+>
+  <div
+    class="content-max-width page-gutters d-flex direction-column align-center"
+  >
+    {{ if .Title }}
+      <h1 class="main-header main-header-xl">{{ .Title }}</h1>
+    {{ end }}
+    {{ if .Params.tagline }}
+      <p class="tagline">{{ .Params.tagline }}</p>
+    {{ end }}
     {{ partial "pandago/default/single/single-page-content.html" . }}
   </div>
 </section>

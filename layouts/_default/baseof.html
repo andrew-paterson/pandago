@@ -1,15 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    {{ partial "pandago/head-element-markup.html" . }} {{ partial "stylesheets.html" . }} {{ partial "head-append.html" . }}
+    {{ partial "pandago/head-element-markup.html" . }}
+    {{ partial "stylesheets.html" . }}
+    {{ partial "head-append.html" . }}
   </head>
-  <body class="{{ .Site.Params.body_classes }} {{ .Params.pageclass }} {{ if .IsHome }} home {{ end }}">
-    {{ partial "body-prepend.html" . }} {{ partial "pandago/header.html" . }}
+  <body
+    class="{{ .Site.Params.body_classes }} {{ .Params.pageclass }} {{ if .IsHome }}
+      home
+    {{ end }}"
+  >
+    {{ partial "body-prepend.html" . }}
+    {{ partial "pandago/header.html" . }}
     <div id="wrapper">
       {{ partial "wrapper-prepend.html" . }}
       <div class="panels-outer">
-        <div class="panels">{{ partial "after-header.html" . }} {{ block "main" . }}{{ end }} {{ partial "panels-append.html" . }}</div>
-        {{ partial "pre-footer.html" . }} {{ partial "pandago/footer.html" . }}
+        <div class="panels">
+          {{ partial "after-header.html" . }} {{ block "main" . }}{{ end }}
+          {{ partial "panels-append.html" . }}
+        </div>
+        {{ partial "pre-footer.html" . }}
+        {{ partial "pandago/footer.html" . }}
       </div>
     </div>
     {{ partial "body-append.html" . }}

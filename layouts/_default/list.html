@@ -1,12 +1,15 @@
-{{ define "main" }} {{ partial "pandago/content-item/page-banner.html" . }}
-<section
-  id="main-content"
-  class="panel {{ .Params.main_content_strip_classes }}"
->
-  <div class="page-gutters">
-    {{ if .Title }}
-    <h1 class="main-header">{{ .Title }}</h1>
-    {{end}} {{ partial "pandago/default/list/list-page-intro-text.html" . }} {{ partial "pandago/default/list/paginated-section-content.html" . }}
-  </div>
-</section>
+{{ define "main" }}
+  {{ partial "pandago/content-item/page-banner.html" . }}
+  <section
+    id="main-content"
+    class="panel {{ .Params.main_content_strip_classes }}"
+  >
+    <div class="page-gutters">
+      {{ if .Title }}
+        <h1 class="main-header">{{ .Title }}</h1>
+      {{ end }}
+      {{ partial "pandago/default/list/list-page-intro-text.html" . }}
+      {{ partial "pandago/default/list/paginated-section-content.html" . }}
+    </div>
+  </section>
 {{ end }}

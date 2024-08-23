@@ -3,7 +3,9 @@
     <ul>
       <li class="list-header">Tags</li>
       {{ range .Params.tags }}
-      <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
+        <li>
+          <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+        </li>
       {{ end }}
     </ul>
   </div>

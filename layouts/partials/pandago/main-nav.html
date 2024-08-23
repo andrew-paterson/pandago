@@ -1,5 +1,8 @@
-{{ if .Site.Menus.main}} {{ partial "pandago/mobile-nav-hamburger.html" . }}
-<nav class="main">
-  <div class="nav-ul-container">{{partial "hugo-sundries/menu" (dict "context" . "menu" .Site.Menus.main)}}</div>
-</nav>
+{{ if .Site.Menus.main }}
+  {{ partial "pandago/mobile-nav-hamburger.html" . }}
+  <nav class="main">
+    <div class="nav-ul-container">
+      {{ partial "hugo-sundries/menu" (dict "context" . "menu" .Site.Menus.main) }}
+    </div>
+  </nav>
 {{ end }}

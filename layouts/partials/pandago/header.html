@@ -2,14 +2,12 @@
   <div class="container">
     {{ partial "header-prepend.html" . }}
     <div class="logo-container">
-      <a
-        class="logo"
-        href="/"
-      >
+      <a class="logo" href="/">
         {{ partial "logo.html" . }}
       </a>
     </div>
 
-    {{ partial "pandago/main-nav.html" . }} {{ partial "header-append.html" . }}
+    {{ partial "pandago/main-nav.html" . }}
+    {{ partial "header-append.html" . }}
   </div>
 </header>

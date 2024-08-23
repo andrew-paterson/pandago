@@ -1,10 +1,10 @@
-{{ $meta_title := ""}}
+{{ $meta_title := "" }}
 {{ if .Params.meta_title }}
-  {{ $meta_title = .Params.meta_title}}
+  {{ $meta_title = .Params.meta_title }}
 {{ else if (or (eq .Site.Title .Title) (not .Title) (.IsHome)) }}
-  {{ $meta_title = .Site.Title}}
+  {{ $meta_title = .Site.Title }}
 {{ else }}
-  {{ $meta_title = (print .Title " | " .Site.Title )}}
+  {{ $meta_title = (print .Title " | " .Site.Title ) }}
 {{ end }}
 
 {{ $open_graph_image := .Site.Params.default_open_graph_image }}
@@ -12,24 +12,34 @@
   {{ $open_graph_image = .Params.open_graph_image }}
 {{ end }}
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="description" content="{{ .Params.meta_description }}">
-{{- if $open_graph_image -}}
-<meta property="og:image" content="{{ .Site.BaseURL }}{{ $open_graph_image}}">
-<meta property="og:image:url" content="{{ .Site.BaseURL }}{{ $open_graph_image}}">
-<meta property="twitter:image" content="{{ .Site.BaseURL }}{{ $open_graph_image}}">
-{{- end -}}
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:url" content="{{ .Permalink }}">
-<meta property="og:description" content="{{ .Params.meta_description }}">
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="{{ $meta_title }}">
-<title>{{$meta_title}}</title>
-<link href="/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
-{{ if isset .Site.Params "ga_tracking_id"}}
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="{{ .Params.meta_description }}" />
+{{- if $open_graph_image -}}
+  <meta
+    property="og:image"
+    content="{{ .Site.BaseURL }}{{ $open_graph_image }}"
+  />
+  <meta
+    property="og:image:url"
+    content="{{ .Site.BaseURL }}{{ $open_graph_image }}"
+  />
+  <meta
+    property="twitter:image"
+    content="{{ .Site.BaseURL }}{{ $open_graph_image }}"
+  />
+{{- end -}}
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:description" content="{{ .Params.meta_description }}" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{{ $meta_title }}" />
+<title>{{ $meta_title }}</title>
+<link href="/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+{{ if isset .Site.Params "ga_tracking_id" }}
   {{ partial "hugo-sundries/google-analytics-tracking-code.html" (dict "context" . "tracking_id" .Site.Params.ga_tracking_id "allowed_hosts" .Site.Params.ga_allowed_hosts) }}
-{{ end  }}
+{{ end }}

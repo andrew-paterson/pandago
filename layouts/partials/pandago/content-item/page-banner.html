@@ -1,30 +1,30 @@
-
 {{ $location := .Section }}
 {{ if .Params.url }}
   {{ $location = path.Base .Params.url }}
 {{ end }}
 {{ $page_banner_for_large_screens_auto := "" }}
 {{ if $location }}
-	{{ if fileExists ( print "static" .Site.Params.page_banner_for_large_screens_dir "/" $location ".jpg") }}
-		{{ $page_banner_for_large_screens_auto = (print .Site.Params.page_banner_for_large_screens_dir "/" $location ".jpg" )}}
-	{{ end }}
+  {{ if fileExists ( print "static" .Site.Params.page_banner_for_large_screens_dir "/" $location ".jpg") }}
+    {{ $page_banner_for_large_screens_auto = (print .Site.Params.page_banner_for_large_screens_dir "/" $location ".jpg" ) }}
+  {{ end }}
 {{ end }}
 {{ $page_banner_for_small_screens_auto := "" }}
 {{ if $location }}
-	{{ if fileExists ( print "static" .Site.Params.page_banner_for_small_screens_dir "/" $location ".jpg") }}
-		{{ $page_banner_for_small_screens_auto = (print .Site.Params.page_banner_for_small_screens_dir "/" $location ".jpg" )}}
-	{{ end }}
+  {{ if fileExists ( print "static" .Site.Params.page_banner_for_small_screens_dir "/" $location ".jpg") }}
+    {{ $page_banner_for_small_screens_auto = (print .Site.Params.page_banner_for_small_screens_dir "/" $location ".jpg" ) }}
+  {{ end }}
 {{ end }}
-{{ $page_banner_for_large_screens := (or .Params.page_banner_for_large_screens $page_banner_for_large_screens_auto .Site.Params.page_banners.default_page_banner_for_large_screens)}}
-{{ $page_banner_for_small_screens := (or .Params.page_banner_for_small_screens $page_banner_for_small_screens_auto .Site.Params.page_banners.default_page_banner_for_small_screens)}}
+{{ $page_banner_for_large_screens := (or .Params.page_banner_for_large_screens $page_banner_for_large_screens_auto .Site.Params.page_banners.default_page_banner_for_large_screens) }}
+{{ $page_banner_for_small_screens := (or .Params.page_banner_for_small_screens $page_banner_for_small_screens_auto .Site.Params.page_banners.default_page_banner_for_small_screens) }}
 
 {{ if $page_banner_for_large_screens }}
   <section id="panorama">
     <picture>
-      {{ partial "hugo-sundries/responsive-source-element.html" (dict "context" . "image_path" $page_banner_for_small_screens "media" "(orientation: portrait)" "element" "source")}}
-      {{ partial "hugo-sundries/responsive-source-element.html" (dict "context" . "image_path" $page_banner_for_large_screens "media" "(orientation: landscape)" "element" "source")}}
- 
-      <img src="{{ $page_banner_for_large_screens }}">
+      {{ partial "hugo-sundries/responsive-source-element.html" (dict "context" . "image_path" $page_banner_for_small_screens "media" "(orientation: portrait)" "element" "source") }}
+      {{ partial "hugo-sundries/responsive-source-element.html" (dict "context" . "image_path" $page_banner_for_large_screens "media" "(orientation: landscape)" "element" "source") }}
+
+
+      <img src="{{ $page_banner_for_large_screens }}" />
     </picture>
   </section>
-{{end}}
+{{ end }}

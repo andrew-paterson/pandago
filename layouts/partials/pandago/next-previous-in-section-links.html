@@ -1,19 +1,16 @@
 <div class="next-prev-links d-flex justify-space-between">
   {{ if .PrevInSection }}
-  <div>
-    <a
-      class="prev"
-      href="{{ .PrevInSection.RelPermalink }}"
-      ><<&nbsp;{{ .PrevInSection.Title }}</a
-    >
-  </div>
-  {{ end }} {{ if .NextInSection }}
-  <div>
-    <a
-      class="next"
-      href="{{ .NextInSection.RelPermalink }}"
-      >{{ .NextInSection.Title }}&nbsp;>></a
-    >
-  </div>
+    <div>
+      <a class="prev" href="{{ .PrevInSection.RelPermalink }}"
+        ><<&nbsp;{{ .PrevInSection.Title }}</a
+      >
+    </div>
+  {{ end }}
+  {{ if .NextInSection }}
+    <div>
+      <a class="next" href="{{ .NextInSection.RelPermalink }}"
+        >{{ .NextInSection.Title }}&nbsp;>></a
+      >
+    </div>
   {{ end }}
 </div>

@@ -1,16 +1,20 @@
 <footer>
   {{ partial "footer-prepend.html" . }}
-  {{ if .Site.Data.social}}
+  {{ if .Site.Data.social }}
     <div class="d-flex sm-links align-center">
       {{ partial "pandago/social-media-links.html" . }}
     </div>
-    {{ end }}
+  {{ end }}
   <div class="footer-item copyright">
-    &copy;&nbsp;<script>document.write(new Date().getFullYear());</script>&nbsp;
-    {{ if  .Site.Data.footer.copyright.url}}
-    <a href="{{ .Site.Data.footer.copyright.url }}">
-      {{ .Site.Data.footer.copyright.text }}
-    </a>
+    &copy;&nbsp;
+    <script>
+      document.write(new Date().getFullYear());
+    </script>
+    &nbsp;
+    {{ if  .Site.Data.footer.copyright.url }}
+      <a href="{{ .Site.Data.footer.copyright.url }}">
+        {{ .Site.Data.footer.copyright.text }}
+      </a>
     {{ else }}
       {{ .Site.Data.footer.copyright.text }}
     {{ end }}
