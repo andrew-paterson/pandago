@@ -9,9 +9,7 @@
   {{ partial "pandago/content-item/tags.html" .page }}
   <div class="body-text">
     {{ partial "pandago/content-item/summary.html" .page }}
-    <a class="read-more" href="{{ .page.RelPermalink }}"
-      >{{ or .context.Site.Params.translations.read_more "Read more" }}</a
-    >
+    {{ partial "pandago/content-item/read-more-link.html" .page }}
   </div>
 </div>
 {{ partial "pandago/content-item/page-banner.html" . }}
